@@ -1,4 +1,4 @@
-# QA Testing Lifecycle Skills — English
+# QA Testing Lifecycle Skills
 
 **Revision 1.1 — Playwright MCP and discoverable project skills.** Start with [START_HERE.md](START_HERE.md) for local client setup and the live CTO exercise. The package now includes 35 numbered procedures and 35 lightweight `qa-*` skill entry points.
 
