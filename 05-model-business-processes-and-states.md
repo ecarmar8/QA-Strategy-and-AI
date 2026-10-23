@@ -44,9 +44,9 @@ Every modeled transition has a source. Unknown provider timing is not an invente
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: confirmed Submitted → ProviderPending → Settled, with retry behavior unspecified. Output: model these states; add a retry/idempotency question; create a pending duplicate-event scenario.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

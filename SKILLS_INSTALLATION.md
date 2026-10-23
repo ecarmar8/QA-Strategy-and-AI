@@ -1,3 +1,7 @@
+# Optional client support
+
+Start with [START_HERE.md](START_HERE.md) and [QA_STRATEGY.md](QA_STRATEGY.md). Installation is needed only for the selected client/tool integration, not for the QA method.
+
 # Load the QA skills in Claude Code or Cursor
 
 This revision contains the readable numbered procedures plus **35 project skill entry points** in `.claude/skills/qa-*/SKILL.md`. Each entry point loads its numbered authoritative procedure and the shared contract from this bundle. The entry points are small; they do not duplicate the full procedures.

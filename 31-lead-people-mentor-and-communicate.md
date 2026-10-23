@@ -15,6 +15,8 @@ Coordinate QA contributors, coach a junior tester, resolve conflicts or explain 
 
 Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse the current source snapshot, checkpoint and already granted authorization. Do not infer tool availability or write authority from this file. Apply source/evidence review in [32-review-ai-output-and-protect-evidence.md](32-review-ai-output-and-protect-evidence.md).
 
+Apply [QA_STRATEGY.md](QA_STRATEGY.md) and [ENGAGEMENT_PLAN.md](ENGAGEMENT_PLAN.md). Ground decisions in product/team discovery, observed delivery and diagnostic evidence. Use [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md) for strategy, escape analysis, pilot and mentoring records. Do not prescribe a sector, tool or cause of defects.
+
 ## Inputs and prerequisites
 
 Team roles/capacity/skills, current risks and commitments, communication audience, decision ownership and actual collaboration authorization.
@@ -44,9 +46,13 @@ No invented employee performance, commitments or named recipients. Distinguish Q
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: junior checks only a refund success toast. Output: coach them to assert balance, duplicate protection and audit using confirmed rules; pair on first run and review evidence.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
+
+## Function ownership and distributed delivery
+
+Set shared quality standards and review ownership, direct priorities/capacity and make deferrals visible as the function grows. Raise material risks proactively, not only on request: process, evidence gap/failure, consequence, recommendation and required action/owner. Agree remote overlap/escalation and leave written decisions and actionable handoffs. Measure coaching with reviewed reasoning and increasing independence, not raw activity or blame for escapes.
 
 ## Handoff
 

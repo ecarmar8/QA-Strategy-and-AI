@@ -44,9 +44,9 @@ Do not add overlapping person-days as elapsed days. No hidden overtime assumptio
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: two testers, one provider sandbox shared, unclear FX scope. Output: parallel UI/API design, sequential sandbox runs, FX estimate pending refinement with explicit impact.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

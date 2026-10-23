@@ -108,7 +108,7 @@ Paste into the LLM client:
 
 > Use the connect-playwright-mcp procedure in file 34 and the shared contract. Discover the connected Playwright MCP server and list only its relevant browser capabilities, without dumping credentials or unrelated configuration. I authorize read-only navigation to https://demo.playwright.dev/todomvc/ for this connection check. Open a visible browser, inspect the actual current page snapshot, and return a receipt showing client, server status, target URL, observed page information and missing capabilities. Do not create, complete or delete items yet. If tools are unavailable, report the exact blocker; do not simulate success.
 
-Expected deliverable: an **actual connection receipt**, or a specific blocker. No QA case becomes Passed merely because this check worked. Proceed to [CTO_LIVE_DEMO.md](CTO_LIVE_DEMO.md) only after the host actually exposes working browser tools.
+Expected deliverable: an **actual connection receipt**, or a specific blocker. No QA case becomes Passed merely because this check worked. Proceed to procedure 20 only when tools and the actual product prerequisites are available.
 
 ## Troubleshooting
 

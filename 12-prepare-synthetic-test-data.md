@@ -1,6 +1,6 @@
 ---
 name: prepare-synthetic-test-data
-description: "Define safe, reproducible data for functional, automation, financial or nonfunctional testing."
+description: "Define safe, reproducible data for functional, automation, data integrity or nonfunctional testing."
 ---
 
 # 12 · Prepare and control test data
@@ -9,7 +9,7 @@ Version: 1.0 · Language: English · Role: Senior QA / QA Lead
 
 ## When to use
 
-Define safe, reproducible data for functional, automation, financial or nonfunctional testing.
+Define safe, reproducible data for functional, automation, data integrity or nonfunctional testing.
 
 ## Shared contract
 
@@ -44,9 +44,9 @@ No real funds/customer identities by default; no destructive SQL against shared 
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: concurrent USD70 refunds against USD100. Output: isolated synthetic payment and two distinct operation identities; clean/reset after run; no reuse of another test’s balance.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

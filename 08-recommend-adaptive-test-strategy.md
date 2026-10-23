@@ -15,6 +15,8 @@ Explain the QA approach as a senior leader and adapt functional, manual, automat
 
 Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse the current source snapshot, checkpoint and already granted authorization. Do not infer tool availability or write authority from this file. Apply source/evidence review in [32-review-ai-output-and-protect-evidence.md](32-review-ai-output-and-protect-evidence.md).
 
+Apply [QA_STRATEGY.md](QA_STRATEGY.md) and [ENGAGEMENT_PLAN.md](ENGAGEMENT_PLAN.md). Ground decisions in product/team discovery, observed delivery and diagnostic evidence. Use [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md) for strategy, escape analysis, pilot and mentoring records. Do not prescribe a sector, tool or cause of defects.
+
 ## Inputs and prerequisites
 
 Risk register; business objective; architecture/surfaces; delivery constraints; testability; team skills; environments, contracts and quality expectations.
@@ -23,7 +25,7 @@ Risk register; business objective; architecture/surfaces; delivery constraints; 
 
 1. State what confidence the release needs and the most important failure events to prevent. Define in-scope journeys and explicit exclusions with consequences.
 2. Allocate functional coverage across UI/web/desktop, API/integration and data checks based on where behavior is best observed. Combine scripted manual testing, exploratory charters and automation; do not impose a universal pyramid percentage.
-3. For each risk, specify technique, level, data, environment, evidence and owner. Include negative, boundary, permission, state, integration and financial reconciliation coverage as applicable.
+3. For each risk, specify technique, level, data, environment, evidence and owner. Include negative, boundary, permission, state, integration and data reconciliation coverage as applicable.
 4. Select nonfunctional checks for performance, resilience, accessibility, security and compatibility based on agreed needs and available expertise. Identify specialist work and missing service-level objectives.
 5. Define entry/exit gates, defect triage, traceability, regression, evidence retention, release recommendation and stakeholder communication. Distinguish QA recommendation from release authority.
 6. Present a concise executive strategy and a practical track plan with tradeoffs for time/capacity. When constrained, remove or defer explicit scope with visible residual risk rather than quietly reducing essential evidence.
@@ -44,9 +46,9 @@ Every major risk has an assurance method. No claim of complete coverage or zero 
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: payment UI changes and provider retry change, short release. Output: UI exploration, API replay/concurrency automation, ledger reconciliation and focused regression; essential retry evidence remains mandatory.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

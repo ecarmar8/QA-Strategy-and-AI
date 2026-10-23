@@ -41,12 +41,22 @@ Attended headed walkthrough defaults in this library are presentation choices, n
 - [Cursor skills](https://cursor.com/docs/skills): discovery locations, including Claude compatibility.
 - [Cursor MCP](https://cursor.com/docs/mcp): project configuration and stdio integration.
 - [Official Playwright CLI installation](https://playwright.dev/agent-cli/installation), [skills](https://playwright.dev/agent-cli/skills) and [introduction](https://playwright.dev/agent-cli/introduction): optional CLI-based skills, distinct from MCP.
-- [Public Playwright TodoMVC example](https://demo.playwright.dev/todomvc/): starter browser target. The three-case acceptance contract is explicitly supplied by CTO_LIVE_DEMO.md; it is not a vendor specification or a financial test suite.
+- Optional browser connectivity targets are tooling checks only; the real product supplies its own acceptance contract.
 
 The MCP setup instructions were documentation-checked on 2026-10-22. No local MCP installation, real connection or live exercise was performed while producing this revision.
 
 The functional design approach follows Edward’s supplied QA method: understand business intent first; scan CRUD, fields, permissions, queries/grids/reports/APIs where applicable; test confirmed rules/states/integrations; prioritize financial/access/data risk; keep traceable, reproducible cases; never invent missing requirements.
 
-The orchestration, leadership templates, CI/publication controls, reporting structures and demo fixtures are proposed extensions for review. They do not assert unprovided personal achievements. Fintech/compliance expectations come from product/provider/domain owners; these skills intentionally do not invent regulatory thresholds or certify compliance.
+The orchestration, leadership templates, CI/publication controls, reporting structures are proposed extensions for review. They do not assert unprovided personal achievements. Domain/compliance expectations come from product/provider/domain owners; these skills intentionally do not invent regulatory thresholds or certify compliance.
 
 The package has not logged into Azure, executed a product test, sent money, published a work item or made a human release decision. Technical links can change; recheck before use in an actual runtime.
+
+
+## Strategy provenance and adaptation
+
+The engagement plan, diagnostic templates, mentoring approach and PROCESS_RISK KPI definitions are authored operating choices for Edward's QA strategy; they are not claimed universal standards or client results.
+
+- Scrum Guide: https://scrumguides.org/scrum-guide.html — shared quality responsibility, inspection/adaptation and contextual practices; use only when Scrum applies.
+- DORA metrics: https://dora.dev/guides/dora-metrics/ — optional application/service delivery outcomes when actual deployment records exist. Do not compare unrelated teams or attribute these outcomes solely to QA.
+
+No domain-specific business rules or regulatory thresholds are introduced by this strategy. Confirm them from each engagement's authorized sources.

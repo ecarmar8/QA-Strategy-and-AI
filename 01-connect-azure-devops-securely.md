@@ -40,13 +40,13 @@ State the exact missing input, capability or decision and its effect. Continue i
 
 ## Quality checks and boundaries
 
-A working login is not authorization to mutate work items, execute payment transactions or deploy. Do not claim that a password is a supported REST authentication method for every deployment.
+A working login is not authorization to mutate work items, execute business operations or deploy. Do not claim that a password is a supported REST authentication method for every deployment.
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: Services project, existing Entra session, read-only request. Output: Verified project read; write scope none; next action retrieve scoped query. If verification was not performed, output Unverified, not Connected.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

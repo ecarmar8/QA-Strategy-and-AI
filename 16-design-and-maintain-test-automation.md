@@ -44,9 +44,9 @@ Do not generate runnable claims from unobserved selectors or nonexistent endpoin
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: no repository but confirmed API contract. Output: proposed test design and required runtime/bindings; no assertion that a suite was installed or executed.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

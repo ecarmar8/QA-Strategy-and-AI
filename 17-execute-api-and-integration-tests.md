@@ -44,9 +44,15 @@ Never send real transfers or production load by default. A successful HTTP respo
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: approved sandbox replay case with real contract binding. Output: two attempts with same operation identity and one financial effect, if observed; otherwise record the actual failure/unknown evidence.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
+
+## Data-heavy integration and cross-service contract depth
+
+For each actual provider/operation, confirm pagination/completeness, mappings, schema/version changes, required versus missing/null fields, timestamp/precision semantics, authentication expiry, limits and documented throttling/error behavior. Verify bounded retry/backoff, duplicate/reordered inputs, partial processing, recovery/replay and downstream consistency where applicable. Do not assume a particular status code, retry count or freshness window.
+
+Trace the input through transformation/storage to the actual consuming process; inspect actual records and independent expected values. Separate controlled fault stubs, provider sandbox and actual integration evidence. Across .NET/Python or other heterogeneous services, assess actual serialization/null/date/numeric contracts and version compatibility rather than assuming language defaults agree.
 
 ## Handoff
 

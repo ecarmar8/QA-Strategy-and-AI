@@ -44,9 +44,9 @@ No production transactions, deployment or rollback implied by generic test autho
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: sandbox evidence is green but production deployment unconfirmed. Output: deployment verification Pending; no postrelease success claim or production mutation.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

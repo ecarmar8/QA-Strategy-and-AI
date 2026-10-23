@@ -1,6 +1,6 @@
 ---
 name: qa-prepare-synthetic-test-data
-description: "Define safe, reproducible data for functional, automation, financial or nonfunctional testing."
+description: "Define safe, reproducible data for functional, automation, data integrity or nonfunctional testing."
 ---
 
 # QA skill entry point — 12

@@ -44,9 +44,9 @@ All suggested criteria are labeled Proposed. Contradictory sources require resol
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: “The operator can refund a payment.” Output: ask full/partial, eligible states, remaining balance, permissions, repeat/concurrent requests, audit and provider outcome. Do not assume a 30-day refund window.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

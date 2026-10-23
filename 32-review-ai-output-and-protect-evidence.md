@@ -44,9 +44,9 @@ Do not claim human review happened when it did not. No auto-acceptance because w
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: AI writes “refunds expire after 30 days” without a source. Output: remove the invented requirement, add a refinement question, mark affected cases Pending definition.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

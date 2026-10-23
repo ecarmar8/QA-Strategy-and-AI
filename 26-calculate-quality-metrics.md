@@ -1,11 +1,11 @@
 ---
 name: calculate-quality-metrics
-description: "Calculate transparent QA metrics for a defined scope, build and reporting period."
+description: "Calculate evidence-based process-risk, shift-left and functional/non-functional assurance KPIs for a CTO, with activity metrics as supporting detail and no financial estimates."
 ---
 
 # 26 · Calculate meaningful quality metrics
 
-Version: 1.0 · Language: English · Role: Senior QA / QA Lead
+Version: 1.3 · Language: English · Role: Senior QA / QA Lead
 
 ## When to use
 
@@ -17,19 +17,23 @@ Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse t
 
 ## Inputs and prerequisites
 
+Read [PROCESS_RISK_KPIS.md](PROCESS_RISK_KPIS.md), the authoritative KPI dictionary. Require the confirmed risk/process/control baseline, current implementation/verification evidence, early-review chronology, preventive findings and agreed non-functional requirements as applicable. Missing inputs remain unknown; no financial data is required.
+
 Versioned case/AC baseline; selected latest applicable run per case/build; preserved attempts; defect history; timestamps; automated-suite inventory if available.
 
 ## Procedure
 
-1. Define scope, time window, build, status taxonomy, deduplication and denominator before calculating. Include Passed, Failed, Blocked and Not Run separately; remove Not Applicable only with a documented scope decision.
-2. For planned applicable cases N, use execution coverage = (Passed + Failed) / N; completion without blockers must not treat Blocked as executed. Use pass rate = Passed / (Passed + Failed). Show counts and no-data when denominator is zero.
-3. For requirement coverage, report confirmed testable AC with reviewed designed cases / confirmed testable AC; separately report essential AC with current passing evidence / essential AC. Pending/unknown criteria remain visible.
-4. Count distinct defects by severity, state and affected essential risk; avoid equating failed tests to defect count. Calculate reopen rate or defect age/repair lead time only with complete lifecycle timestamps and a defined cohort.
-5. For automation, distinguish candidates, implemented tests, current executed coverage and reliability. Report first-attempt versus after-retry results, flaky tests and maintenance burden where recorded; no invented productivity percentages.
-6. For leakage, define release cohort and postrelease observation window; for performance, include workload, sample count and percentile source. Do not compare teams or people using raw defect/case counts.
-7. Show missing/stale data, limitations and essential gate status alongside aggregates. Label fictitious demo metrics SIMULATED. Label real user-supplied historical metrics with their source and verification limits, not SIMULATED; if provenance is unclear, use Sample / provenance unverified and avoid treating them as current-release evidence.
+1. Use reporting profile PROCESS_RISK and write in English. Exclude costs, savings, ROI, monetary exposure, expected-loss estimates and financial-benefit claims. Do not ask the QA lead for financial data. Business amounts used as functional inputs remain legitimate test data.
+2. Lead with Verified risk mitigation, Unresolved critical risks, Critical process assurance, Shift-left readiness, Preventive findings resolved and Non-functional assurance. Apply the exact formulas and eligibility rules in PROCESS_RISK_KPIS.md. Mitigation requires every required control to be implemented, currently verified and source-linked. Acceptance/deferral is not mitigation.
+3. Freeze scope, cohort, current build/context, status taxonomy and denominators before calculating. Missing baseline/chronology gives Not measured; a known zero denominator gives No data. Expose unknown/unclassified populations. Do not infer early prevention from a final story or convert ordinal risk scores into incident-reduction percentages.
+4. Put execution metrics in supporting detail: execution coverage = (Passed + Failed) / applicable planned cases; pass rate = Passed / (Passed + Failed). Blocked and Not Run stay separate. Preserve all attempts, count each risk once and deduplicate defects by ID.
+5. For preventive metrics, require actual review/decision chronology and confirmed findings. A question or proposal alone is not a prevented defect. For non-functional assurance, require agreed scope/targets, real measurements, method/context and current evidence. Missing scope is Not assessed, not 100% or Not applicable.
+6. Reconcile the risk-control ledger with skill 28's essential gates. Show failed/missing controls and residual concerns even when aggregate coverage is high. Keep designed coverage, current passing evidence and future incident outcomes distinct. Do not compare people by raw defect/case counts.
+7. Label fictitious metrics SIMULATED, supplied history with provenance/limits and unknown samples as unverified. Return the metric dictionary, missing evidence and next actions. No universal quality score or unsupported causal prevention claim.
 
 ## Required output
+
+Primary output: the six PROCESS_RISK KPIs using PROCESS_RISK_KPIS.md. Supporting output: execution, defect and automation detail. Omit financial KPI sections entirely, including placeholder cost/ROI cards.
 
 Metric dictionary/table: Metric | Formula | Numerator | Denominator | Scope/build/window | Value | Evidence/source | Limitation. Add status distribution and essential unresolved risks.
 
@@ -47,7 +51,11 @@ Business-rule proposals need owner confirmation; human release authority remains
 
 ## Small example
 
-Input: six cases, 3 Passed, 1 Failed, 1 Blocked, 1 Not Run. Output: executed 4/6 = 66.7%; pass 3/4 = 75%; one blocker and one unrun visible; defects counted separately.
+Five confirmed critical risks: two have all required controls verified, one control fails and two remain unverified. Report verified mitigation 2/5 = 40% and three unresolved critical risks. Missing early-review chronology gives Not measured. This is mitigation coverage, not a 40% decrease in incident probability or a claim that future incidents were prevented. Case pass rate remains supporting detail.
+
+## Selected role profiles
+
+When the current request selects CapRelease, also read [profiles/caprelease/KPI_DICTIONARY.md](profiles/caprelease/KPI_DICTIONARY.md) and [profiles/caprelease/REPORTING.md](profiles/caprelease/REPORTING.md). Keep the six primary PROCESS_RISK indicators; derive supporting role diagnostics from reviewed ledgers using the profile calculator. Never infer company results from the vacancy or portfolio checks. Other engagements keep their actual context and do not automatically adopt this profile.
 
 ## Handoff
 

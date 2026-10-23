@@ -1,6 +1,6 @@
 ---
 name: qa-produce-clear-visual-quality-reports
-description: "Explain what was tested, what was observed and what decision follows for a CTO or delivery team."
+description: "Generate an English executive report centered on verified process-risk mitigation, shift-left prevention, functional/non-functional assurance and unresolved risks; exclude financial estimates."
 ---
 
 # QA skill entry point — 27

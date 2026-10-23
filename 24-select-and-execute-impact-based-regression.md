@@ -44,9 +44,9 @@ A narrow suite needs an evidence-based rationale. A previous build’s pass is n
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: refund balance logic changed. Output: partial/excess/replay/concurrency/reconciliation and permission paths considered; unrelated UI export excluded with reason if truly unaffected.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

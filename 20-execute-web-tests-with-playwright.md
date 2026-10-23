@@ -44,13 +44,13 @@ No fake traces, generated selectors presented as observed, or green results from
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: approved refund web case, actual role/label locators, ready sandbox. Output: observed assertions and evidence per run; if login blocks on MFA, hand off to user and mark execution Blocked until resolved.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 
-Use [CTO_LIVE_DEMO.md](CTO_LIVE_DEMO.md) for the bounded three-case browser demonstration. Its report starts Not Run and is distinct from file 99's simulated payment outcomes.
+Use the real engagement target, agreed expectations, data and authorization. Connectivity is not product verification.
 
 22–24, 25 for CI, 26 for result aggregation.
 

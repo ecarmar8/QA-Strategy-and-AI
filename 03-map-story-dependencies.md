@@ -44,9 +44,9 @@ Every arrow has evidence and an unambiguous direction. Item state Done does not 
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: A is the confirmed predecessor of B; B is Related to C. Output: A → B confirmed; B/C dependency Unknown; ask whether C needs B data. No B → C invented edge.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

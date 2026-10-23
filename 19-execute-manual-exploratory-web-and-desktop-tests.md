@@ -44,9 +44,9 @@ Do not claim to have clicked, observed or tested an unavailable surface. No desk
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: native Windows payment client, browser-only tools. Output: desktop manual checklist for a human; execution Not Run by LLM; API checks may proceed independently if authorized.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

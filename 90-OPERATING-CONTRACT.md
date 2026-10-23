@@ -88,11 +88,11 @@ The checkpoint stores references and decisions, never secret values or a hidden 
 
 Discover actual supported tools and their usage guidance. A connector may read stories without exposing Test Plans writes; a browser may inspect a web UI without controlling native desktop. Missing capability is a blocker or manual handoff, never grounds for an invented call.
 
-For Playwright MCP, use skill 34 to verify the connection and skill 20 to execute. QA skills guide the process; MCP supplies tool capabilities; optional official CLI skills guide a separate shell execution path. A loaded Markdown file or a saved server entry is not proof of a working tool. Keep the runtime, session, schemas and evidence path explicit. A live task-list exercise proves only its scoped browser workflow, not payment integrity or release readiness.
+For Playwright MCP, use skill 34 to verify the connection and skill 20 to execute. QA skills guide the process; MCP supplies tool capabilities; optional official CLI skills guide a separate shell execution path. A loaded Markdown file or a saved server entry is not proof of a working tool. Keep the runtime, session, schemas and evidence path explicit. A tooling check proves only its scoped capability, not product assurance or release readiness.
 
 Azure DevOps Services and Server authentication differ. Prefer existing supported sessions and modern identity methods; do not prescribe a universal username/password REST flow. Playwright is suitable for supported web contexts; Electron support is experimental, and ordinary Playwright does not provide general native desktop automation.
 
-Actual execution requires a known target/build, permission, isolated synthetic data, oracle, evidence and cleanup. Production transaction, financial transfer, load/security/fault testing, pipeline-triggered deployment, rollback and data repair require their specific authorized scopes. Read access or test-case design alone grants none of them.
+Actual execution requires a known target/build, permission, isolated synthetic data, oracle, evidence and cleanup. Production transaction, sensitive business operation, load/security/fault testing, pipeline-triggered deployment, rollback and data repair require their specific authorized scopes. Read access or test-case design alone grants none of them.
 
 ## 7. Quality, risk and release decisions
 

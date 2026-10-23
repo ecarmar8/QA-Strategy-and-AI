@@ -44,9 +44,9 @@ A smoke pass establishes basic readiness, not release approval. Missing test too
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: login passes, core payment submission fails before provider call. Output: dependent payment tracks stopped; evidence to 22; independent case review continues.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "B01",
+    "requirement": "Four source signals: sales, accounting, banking, inventory/fulfilment",
+    "response": "Map each source through transformation, storage and actual consumers; confirm freshness/completeness policy",
+    "procedures": "03,05,06,17,18",
+    "proof": "Signal/dependency map and source-to-target evidence"
+  },
+  {
+    "id": "B02",
+    "requirement": "UK eCommerce; advertised \u00a320k\u2013\u00a31m blended inventory/revenue facility and fixed fee",
+    "response": "Confirm rules, eligibility, calculations, boundaries and exceptions with Product/underwriting; no invented formula",
+    "procedures": "04,06,10,18",
+    "proof": "Confirmed rule oracle and calculation/state coverage"
+  },
+  {
+    "id": "B03",
+    "requirement": "Decisions in 24\u201372 hours",
+    "response": "Clarify timing definition, workflow waits and technical versus manual stages; do not infer endpoint SLA",
+    "procedures": "00,05,09,21",
+    "proof": "Process timing definition and applicable technical targets"
+  },
+  {
+    "id": "B04",
+    "requirement": "Azure platform and small senior team",
+    "response": "Inspect actual architecture, delivery, access and capacity before tools or process changes",
+    "procedures": "00,03,08,09",
+    "proof": "Context/architecture and capacity plan"
+  },
+  {
+    "id": "O01",
+    "requirement": "Own platform QA strategy and define quality",
+    "response": "Agree quality expectations, coverage levels, evidence, responsibilities and improvement priorities",
+    "procedures": "00,07,08",
+    "proof": "Reviewed project strategy and control baseline"
+  },
+  {
+    "id": "O02",
+    "requirement": "Decide automated versus manual coverage",
+    "response": "Choose by risk, recurrence, oracle and maintenance; retain exploration",
+    "procedures": "15,16",
+    "proof": "Candidate decisions and maintained checks"
+  },
+  {
+    "id": "O03",
+    "requirement": "Own release readiness and challenge senior stakeholders",
+    "response": "Assess required evidence, explain consequence and give a supported recommendation proactively",
+    "procedures": "27,28,31",
+    "proof": "Gate matrix, No-Go/Pending/Go rationale and decision record"
+  },
+  {
+    "id": "O04",
+    "requirement": "Hands-on front-end functional/regression testing",
+    "response": "Review actual web journeys and execute positive/negative/state/permission/regression coverage",
+    "procedures": "10,14,19,20,24",
+    "proof": "Source-backed cases, actual runs and evidence"
+  },
+  {
+    "id": "O05",
+    "requirement": "REST API testing",
+    "response": "Validate contract, authentication/authorization, inputs/errors, states and business effects",
+    "procedures": "17,23,24",
+    "proof": "Sanitized request/response and persisted assertions"
+  },
+  {
+    "id": "O06",
+    "requirement": "Integration and contract testing",
+    "response": "Verify producer/consumer expectations, versions and asynchronous effects",
+    "procedures": "03,17,18",
+    "proof": "Contract and end-to-end integration evidence"
+  },
+  {
+    "id": "O07",
+    "requirement": "Write SQL to build data and verify end to end",
+    "response": "Use actual SQL Server schema, bounded T-SQL, controlled fixtures and UI/API/data correlation",
+    "procedures": "12,18",
+    "proof": "Reviewed queries, setup/cleanup and reconciliation"
+  },
+  {
+    "id": "O08",
+    "requirement": "Strong joins, indexes and stored-procedure knowledge",
+    "response": "Investigate join cardinality/fan-out, procedure side effects, plans/index use and isolation without unauthorized DDL",
+    "procedures": "18",
+    "proof": "Query explanations, procedure checks and diagnostic evidence"
+  },
+  {
+    "id": "O09",
+    "requirement": "Challenge requirements and acceptance criteria early",
+    "response": "Resolve ambiguity with actual owners before affected implementation",
+    "procedures": "04,06,11",
+    "proof": "Confirmed questions/decisions and timing"
+  },
+  {
+    "id": "O10",
+    "requirement": "Partner with Product and developers as a peer",
+    "response": "Review coverage, pair on reproduction and keep evidence-based feedback short",
+    "procedures": "09,22,23,31",
+    "proof": "Review/pairing records and actionable feedback"
+  },
+  {
+    "id": "O11",
+    "requirement": "Build and maintain automated suites",
+    "response": "Implement requested approved scope, review assertions/data/cleanup and own maintenance",
+    "procedures": "15,16,20,24",
+    "proof": "Reviewed source, reproducible actual executions and ownership"
+  },
+  {
+    "id": "O12",
+    "requirement": "Azure DevOps pipelines and gates",
+    "response": "Inspect runner/results, fail/missing/skip/retry behavior and actual branch/stage enforcement",
+    "procedures": "25,28",
+    "proof": "Pipeline proposal/change, safe gate proof and run artifacts"
+  },
+  {
+    "id": "O13",
+    "requirement": "Third-party failure modes",
+    "response": "Exercise permitted timeouts, errors, partial data, auth expiry and recovery",
+    "procedures": "17,21",
+    "proof": "Provider-specific fault and recovery matrix"
+  },
+  {
+    "id": "O14",
+    "requirement": "Retries and rate limits",
+    "response": "Confirm bounded retry/backoff and provider limit semantics; verify no duplicate effects",
+    "procedures": "06,17,18",
+    "proof": "Contract-linked retry/throttle and persisted-effect evidence"
+  },
+  {
+    "id": "O15",
+    "requirement": "Edge cases in live data / data-heavy ETL",
+    "response": "Use approved sanitized representative shapes; assess pagination, duplicates, schema drift, missing/null/late records and transformations",
+    "procedures": "12,17,18",
+    "proof": "Data-shape coverage and discrepancy analysis"
+  },
+  {
+    "id": "O16",
+    "requirement": "Actionable reporting: trends, coverage, risk, readiness",
+    "response": "Report six process-risk KPIs with denominators, source/build, limitations and next decisions",
+    "procedures": "26,27,28",
+    "proof": "Executive report and traceability ledger"
+  },
+  {
+    "id": "O17",
+    "requirement": "Performance",
+    "response": "Agree realistic workload and technical targets; select existing tooling or k6/JMeter as justified",
+    "procedures": "21",
+    "proof": "Measured performance evidence or Pending definition"
+  },
+  {
+    "id": "O18",
+    "requirement": "Resilience",
+    "response": "Verify scoped dependency recovery, replay/partial failures and consistency",
+    "procedures": "17,18,21",
+    "proof": "Authorized recovery experiment and evidence"
+  },
+  {
+    "id": "O19",
+    "requirement": "Accessibility / WCAG",
+    "response": "Agree version/level and combine automated checks with manual evaluation",
+    "procedures": "19,21",
+    "proof": "Criteria-level accessibility findings and limits"
+  },
+  {
+    "id": "O20",
+    "requirement": "Security basics / FCA context",
+    "response": "Confirm applicable obligations and owners; assess relevant access/data/log/secret controls",
+    "procedures": "06,17,21,28",
+    "proof": "Scoped security evidence and compliance-owner decisions"
+  },
+  {
+    "id": "O21",
+    "requirement": "Lead/manage the QA function as it grows",
+    "response": "Set standards, direct capacity/priorities, assign reviewers/backups and adapt the function",
+    "procedures": "09,30,31",
+    "proof": "Operating standards, responsibility/capacity and improvement plan"
+  },
+  {
+    "id": "O22",
+    "requirement": "Mentor and spread testing responsibility",
+    "response": "Coach reasoning through real work; pair and hand over independent checks",
+    "procedures": "11,31",
+    "proof": "Reviewed work samples and independence progression"
+  },
+  {
+    "id": "E01",
+    "requirement": "Demonstrated ownership and leadership history",
+    "response": "Map actual career examples to strategy decisions and team leadership; corroborate before claiming measured outcomes",
+    "procedures": "31,32",
+    "proof": "Candidate-reported experience; supporting examples pending review"
+  },
+  {
+    "id": "E02",
+    "requirement": "Playwright/Cypress/Selenium and Postman or equivalent",
+    "response": "Explain actual experience accurately; demonstrate with real supplied scope and available runtime",
+    "procedures": "16,17,20,32",
+    "proof": "Actual portfolio/tool evidence; no assumed advanced mastery"
+  },
+  {
+    "id": "E03",
+    "requirement": "Risk judgment and non-technical trade-offs",
+    "response": "Tie priority to failure consequence; show explicit exclusions and residual risks",
+    "procedures": "07,08,27,28",
+    "proof": "Risk rationale and decision-ready explanation"
+  },
+  {
+    "id": "E04",
+    "requirement": "Agile collaboration",
+    "response": "Work inside the actual planning/flow cadence; inspect waits and feedback without assuming ceremonies",
+    "procedures": "00,09,30,31",
+    "proof": "Observed delivery map and contextual agreements"
+  },
+  {
+    "id": "E05",
+    "requirement": "Excellent written/spoken English",
+    "response": "Use English strategies, criteria, reports and concise verbal walkthroughs",
+    "procedures": "04,22,27,31",
+    "proof": "Written portfolio; spoken ability demonstrated in interview"
+  },
+  {
+    "id": "E06",
+    "requirement": "Remote and time-zone collaboration",
+    "response": "Agree overlap/escalation, document decisions and preserve actionable handoffs",
+    "procedures": "09,31",
+    "proof": "Operating agreement; candidate history corroborated separately"
+  },
+  {
+    "id": "E07",
+    "requirement": "Small team pace, independence and limited hand-holding",
+    "response": "Prioritize a bounded pilot, continue valid work through blockers and raise decisions without prompting",
+    "procedures": "00,07,09,31",
+    "proof": "Day-one output, checkpoint and next actions"
+  },
+  {
+    "id": "E08",
+    "requirement": "Reliable home setup and daily video calls",
+    "response": "Candidate confirms equipment/connectivity and contingency; no invented readiness claim",
+    "procedures": "Candidate logistics",
+    "proof": "Candidate confirmation required"
+  },
+  {
+    "id": "E09",
+    "requirement": "Remote from Medell\u00edn",
+    "response": "Confirm actual location/arrangement with employer; do not assume eligibility from generic remote work",
+    "procedures": "Candidate logistics",
+    "proof": "Candidate/employer confirmation required"
+  },
+  {
+    "id": "D01",
+    "requirement": "Financial services / regulated environment experience",
+    "response": "Use actual banking/payments/data-migration examples; confirm applicable obligations for this company",
+    "procedures": "06,18,32",
+    "proof": "User-reported career examples; no compliance-certification claim"
+  },
+  {
+    "id": "D02",
+    "requirement": "Azure DevOps Test Plans / CI/CD",
+    "response": "Map existing items/results and gates using actual permissions; keep integrations optional elsewhere",
+    "procedures": "01,02,25,33",
+    "proof": "Plan/run/build links and authorized published artifacts"
+  },
+  {
+    "id": "D03",
+    "requirement": "Working familiarity with C#/.NET or Python",
+    "response": "Inspect real service boundaries/code with developers and propose checks at the appropriate level",
+    "procedures": "16,17,18,32",
+    "proof": "Reviewed code/assertions and debugging explanation"
+  },
+  {
+    "id": "D04",
+    "requirement": "Contract/performance tools",
+    "response": "Select actual contracts and bounded workload; use compatible tools without claiming undocumented expertise",
+    "procedures": "17,21",
+    "proof": "Contract and performance artifacts"
+  },
+  {
+    "id": "D05",
+    "requirement": "ISTQB or equivalent",
+    "response": "Explain equivalent practice; claim a certificate only if supplied and verified",
+    "procedures": "Candidate credentials",
+    "proof": "Certificate/status not assumed"
+  },
+  {
+    "id": "D06",
+    "requirement": "Practical AI beyond surface use",
+    "response": "Run source-grounded analysis, review coverage, propose queries/tests, validate evidence and generate reports through reusable skills",
+    "procedures": "00,04,07,10,11,18,26,27,32",
+    "proof": "Auditable input\u2192AI draft\u2192review\u2192actual output chain"
+  },
+  {
+    "id": "S01",
+    "requirement": "Problem solving",
+    "response": "Reconstruct failures, separate causes/hypotheses and test explanations",
+    "procedures": "18,22,23,30",
+    "proof": "Evidence-backed causal analysis"
+  },
+  {
+    "id": "S02",
+    "requirement": "Ownership and accountability",
+    "response": "Name actions/owners and give a supported recommendation; preserve unknowns",
+    "procedures": "00,28,31",
+    "proof": "Decision and action ledger"
+  },
+  {
+    "id": "S03",
+    "requirement": "Communication and collaboration",
+    "response": "Raise written and meeting concerns proactively; pair and clarify without blame",
+    "procedures": "04,22,27,31",
+    "proof": "Actionable updates and shared decisions"
+  },
+  {
+    "id": "S04",
+    "requirement": "Continuous learning",
+    "response": "Review pilot results, recurrence, mentoring and tool limitations, then adapt",
+    "procedures": "30,31,32",
+    "proof": "Reviewed improvement backlog and follow-up"
+  }
+]

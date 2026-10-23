@@ -44,9 +44,9 @@ No blanket “automate everything.” No promise that Playwright controls all de
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: stable API idempotency rule and a changing desktop layout. Output: prioritize API regression; desktop exploration/manual now; reassess automation after runtime and UI stabilize.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

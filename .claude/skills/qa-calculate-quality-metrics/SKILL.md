@@ -1,6 +1,6 @@
 ---
 name: qa-calculate-quality-metrics
-description: "Calculate transparent QA metrics for a defined scope, build and reporting period."
+description: "Calculate evidence-based process-risk, shift-left and functional/non-functional assurance KPIs for a CTO, with activity metrics as supporting detail and no financial estimates."
 ---
 
 # QA skill entry point — 26

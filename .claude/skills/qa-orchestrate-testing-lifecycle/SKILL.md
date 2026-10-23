@@ -1,6 +1,6 @@
 ---
 name: qa-orchestrate-testing-lifecycle
-description: "Coordinate a complete or partial QA engagement, resume a checkpoint, or explain the lifecycle to leadership."
+description: "Coordinate product/team discovery, diagnose delivery and quality gaps, and guide prevention, verification, leadership, reporting and improvement across a QA engagement."
 ---
 
 # QA skill entry point — 00

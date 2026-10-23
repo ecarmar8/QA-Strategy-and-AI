@@ -15,6 +15,8 @@ Close an iteration/release QA effort and turn evidence into practical improvemen
 
 Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse the current source snapshot, checkpoint and already granted authorization. Do not infer tool availability or write authority from this file. Apply source/evidence review in [32-review-ai-output-and-protect-evidence.md](32-review-ai-output-and-protect-evidence.md).
 
+Apply [QA_STRATEGY.md](QA_STRATEGY.md) and [ENGAGEMENT_PLAN.md](ENGAGEMENT_PLAN.md). Ground decisions in product/team discovery, observed delivery and diagnostic evidence. Use [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md) for strategy, escape analysis, pilot and mentoring records. Do not prescribe a sector, tool or cause of defects.
+
 ## Inputs and prerequisites
 
 Final scope, run/defect/release records, residual risks, incidents, effort and team feedback.
@@ -44,9 +46,9 @@ Do not delete failure history during cleanup. No declaration of zero residual ri
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: repeated retest delay caused by unclear build tags. Output: action to expose build ID in the test environment, owner engineering lead, measure blocked retest time next iteration.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

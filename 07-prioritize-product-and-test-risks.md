@@ -44,9 +44,9 @@ No numerical risk score without a defined scale and evidence. A missing essentia
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: new retry logic around payouts, no prior incident data. Output: duplicate payout P1 due to financial impact; likelihood Unknown; require idempotency and uncertain-outcome coverage.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

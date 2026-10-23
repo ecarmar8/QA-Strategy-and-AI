@@ -44,9 +44,9 @@ No readiness claim from reachability alone. Do not leak health payloads or crede
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: web accessible but build unknown and provider sandbox unavailable. Output: UI analysis possible; financial integration execution Blocked; build identification required.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

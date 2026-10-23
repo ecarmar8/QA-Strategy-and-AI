@@ -1,11 +1,7 @@
-# QA lifecycle project instructions
+# QA project instructions
 
-Read START_HERE.md and 90-OPERATING-CONTRACT.md before starting work. Keep user-facing explanations and artifacts in English unless the user explicitly changes the language.
+Read START_HERE.md, QA_STRATEGY.md and 90-OPERATING-CONTRACT.md. Keep project artifacts in English. Start from actual product, team and process discovery, or resume an existing checkpoint. Use procedure 00 for coordination; load only relevant procedures via the project-local qa-* entry points or their root Markdown files.
 
-Use the `qa-*` project skills in `.claude/skills/`. Each is a thin entry point to a numbered authoritative root procedure. Load the actual procedure rather than relying on its description. Apply skills 31 and 32 across stages.
+Do not assume an industry, Scrum, Azure, Playwright, an execution environment or a cause of escaped defects. Preserve useful existing practices. Apply 31 for leadership and 32 for evidence review throughout. Use PROCESS_RISK_KPIS.md for reporting, without financial metrics. Missing information and residual risks remain explicit.
 
-For browser execution, discover real Playwright MCP capabilities and follow skill 34, then skill 20. Do not infer a working server from a saved config. Keep the optional CLI route distinct and do not mix session references.
-
-This is an instruction/documentation project. Do not create an application, generate an automation framework or change the user's system unless that work is requested. Follow existing session authorization without repeatedly asking. Stop dependent actions with missing essential prerequisites and continue useful independent work.
-
-Real source analysis, actual runs, supplied historical evidence and fictitious simulations remain distinct. The live CTO exercise starts Not Run; the payment walkthrough is explicitly simulated. Never claim unperformed actions or human approvals.
+This is a reusable QA strategy and procedure repository. Do not generate an unrelated application or automation framework. Propose implementation changes from evidence and act within the actual authorization. Do not invent tests, outcomes, owners, chronology, business acceptance or release decisions. Tool setup is conditional on the task, not the first methodology stage.

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "scope": "Not supplied",
+  "build": "Unknown",
+  "period": "Unknown",
+  "source": "CR-JD-01 (vacancy only; no company measurement evidence)",
+  "baselines": {
+    "integration_controls": "Not established",
+    "decisions": "Not established",
+    "data_rules": "Not established",
+    "contracts": "Not established",
+    "automation_controls": "Not established",
+    "releases": "Not established",
+    "feedback_items": "Not established",
+    "ai_artifacts": "Not established",
+    "effort_pairs": "Not established"
+  },
+  "production_attribution_complete": false,
+  "observation_window": "",
+  "critical_defects": [],
+  "integration_controls": [],
+  "decisions": [],
+  "data_rules": [],
+  "contracts": [],
+  "automation_controls": [],
+  "releases": [],
+  "feedback_items": [],
+  "ai_artifacts": [],
+  "effort_pairs": []
+}

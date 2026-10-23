@@ -1,57 +1,34 @@
 ---
 name: orchestrate-testing-lifecycle
-description: "Coordinate a complete or partial QA engagement, resume a checkpoint, or explain the lifecycle to leadership."
+description: Coordinate a QA engagement from product and team discovery through diagnosis, prevention, verification, leadership, release assessment and improvement, or resume an existing stage.
 ---
 
-# 00 · Orchestrate the testing lifecycle
+# 00 · Orchestrate an adaptive QA engagement
 
-Version: 1.0 · Language: English · Role: Senior QA / QA Lead
+Read [QA_STRATEGY.md](QA_STRATEGY.md), [ENGAGEMENT_PLAN.md](ENGAGEMENT_PLAN.md) and [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md). Keep artifacts in English. Apply 31 and 32 throughout. Use current authorization and actual source/tool capabilities.
 
-## When to use
+## Inputs
 
-Coordinate a complete or partial QA engagement, resume a checkpoint, or explain the lifecycle to leadership.
-
-## Shared contract
-
-Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse the current source snapshot, checkpoint and already granted authorization. Do not infer tool availability or write authority from this file. Apply source/evidence review in [32-review-ai-output-and-protect-evidence.md](32-review-ai-output-and-protect-evidence.md).
-
-## Inputs and prerequisites
-
-Business objective; requested mode; available sources and tools; product surfaces; release or iteration scope; existing authorization and artifacts. Missing tools do not prevent offline analysis.
+User objective, available project sources, current checkpoint if any, scope and authority. A missing environment does not prevent discovery or source analysis. No specific sector, delivery model, work-management platform or execution tool is required.
 
 ## Procedure
 
-1. Read README.md, 90-OPERATING-CONTRACT.md and the user request. Establish the mode and reuse authorization already present in the session. Discover actual capabilities; never assume an Azure connector or Playwright runtime exists.
-2. Create a stage plan with artifact owners and entry/exit conditions. Start with 01–03 for connected discovery, or supplied fixtures for offline work. Apply 31 and 32 throughout.
-3. Run 04–08 to establish testable requirements, domain models, risk and strategy. Return unresolved business decisions to the product owner; continue independent analysis while dependent cases stay Pending definition.
-4. Run 09–13 for planning, case design, coverage, data and environment readiness. Build the requirement-to-evidence chain before execution.
-5. When authorized and ready, run smoke (14), manual/API/data/nonfunctional tracks (17–21), with automation decisions and design (15–16). For Playwright MCP, first use skill 34 to verify the actual connection and tool capabilities, then skill 20 to execute. Treat the optional CLI route separately. Desktop execution must use compatible tooling. Use 25 only when an actual CI context exists.
-6. Route any failure through 22, then 23 and 24 after a fix. Preserve initial failures and subsequent runs. Do not interpret a retry as deletion of a defect.
-7. Use 26–28 for metrics, visual reporting and the QA release recommendation. The authorized release owner makes the release decision. Use 29 only for an authorized release context, then 30 for closure and learning.
-8. Publish through 33 only within explicit Azure write authorization. Save a checkpoint after each stage, on a blocker and before context handoff; load only the next relevant skills.
+1. Resume a valid checkpoint; otherwise establish the engagement objective and available context. Identify products, users, stakeholders, decisions, current commitments and boundaries. Ask for essential missing sources while progressing on valid independent work.
+2. Learn a real critical workflow with Product and current QA. Map actors, rules, states, data and dependencies using 03–06 where applicable. Meet contributors and shadow actual work. Trace a change from definition to release; record current practices and waits. Use supplied exports when connectors are unavailable. Use 01 only if actual Azure access is needed, not as the first mandatory step.
+3. Diagnose using a bounded sample of escaped defects and successful/recent work when available. Record selection limits, introduction causes versus escape causes, evidence, hypotheses and decision ownership. For a new product use design/requirements risk instead; production data remains absent. Do not assume the tester caused the escapes.
+4. Establish a baseline; apply 07–09 to propose a contextual strategy and one focused pilot. Specify the gap, critical process, controls, owner, verification and success criteria. Record actual reviews/decisions without fabricating agreement.
+5. Apply 04 for early clarification and 10–13 for source-backed design, coverage, data and environment readiness. Use PROJECT_TEMPLATES.md where equivalent artifacts are absent. Begin prevention before affected implementation where feasible and retain chronology.
+6. When prerequisites and authority exist, apply 14 and relevant 17–21 tracks. Decide automation through 15–16. Use 34 before actual Playwright MCP work; tooling setup is not the purpose of this engagement. Use 25 only for an applicable pipeline. Keep design and actual execution distinct.
+7. Apply 22–24 for failures, corrections and impact regression. Recheck scope/evidence after changes. Mentor through the work using 31; preserve contributor ownership and observable learning.
+8. Apply 26–28 and PROCESS_RISK_KPIS.md for the executive report and scoped recommendation. No financial KPIs or unsupported prevention claims. Retain residual risks and unknowns. Business acceptance and the human release decision remain separate.
+9. Use 29 within the authorized release/incident scope and 30 for outcome review, recurrence and the improvement backlog. Evaluate the pilot and decide with owners whether to retain, adapt or stop. Publish through 33 only for actual authorized Azure writes; other systems require their real capabilities and authority.
 
-## Required output
+## Role-specific context
 
-Stage plan: Stage | Skills | Owner | Input artifacts | Output artifacts | Entry gate | Exit evidence | Status. Finish with checkpoint, immediate next action, blockers and decisions needed.
+When the user supplies a vacancy or target engagement, map its requirements to the strategy, relevant procedures and proof without converting the general method into a mandatory industry profile. For the selected CapRelease context, use [profiles/caprelease/ROLE_TRACEABILITY.md](profiles/caprelease/ROLE_TRACEABILITY.md) and its linked strategy, KPI and AI evidence documents.
 
-For each output, include artifact ID/version, source references, current scope/build where applicable, assumptions, unresolved questions, status, owner and next action. Use the relevant template in [91-REUSABLE-TEMPLATES.md](91-REUSABLE-TEMPLATES.md). Keep case definitions separate from execution records.
+## Output and handoff
 
-## Missing input and stopping behavior
+Return only stage-appropriate artifacts: context brief, process/delivery map, diagnostic findings, baseline, project strategy/pilot, risk-control coverage, actual evidence, executive report or improvement review. Each carries scope, source/revision, status, owner or Unassigned, unknowns and next action. Use [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md) and [91-REUSABLE-TEMPLATES.md](91-REUSABLE-TEMPLATES.md).
 
-State the exact missing input, capability or decision and its effect. Continue independent analysis that remains valid. Keep unknown requirements Pending definition and unexecuted cases Not Run. In connected mode, unavailable execution is Blocked/Not Run; it is never a simulated pass. In OFFLINE_DEMO, label every simulated result.
-
-## Quality checks and boundaries
-
-No execution without a valid environment/authorization; no Go with missing essential evidence; no invented live results. Numbering is guidance: skip inapplicable tracks with reasons and return to prior stages when requirements change.
-
-Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
-
-## Small example
-
-Input: “Assess these three remittance stories; no environment yet.” Output: CONNECTED_READ or supplied-text analysis; design may proceed; execution Not Run; environment and authorization pending; no release approval.
-
-## Handoff
-
-01 for access, 02 for supplied backlog, or the stage indicated by the checkpoint.
-
-Save a checkpoint with produced artifact references, decisions, blockers and the next skill. The numbering is a navigation aid, not an instruction to execute every track.
+Save a checkpoint with completed stages, artifact references, verified facts, open decisions, freshness invalidators and the next relevant procedure. Do not run every numbered procedure merely to complete a sequence. Unconfirmed rules remain Pending definition; unexecuted cases remain Not Run. Missing prerequisite blocks only dependent work. No outcomes, approvals, chronology or tools may be invented.

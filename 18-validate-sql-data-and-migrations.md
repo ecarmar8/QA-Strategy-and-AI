@@ -44,9 +44,17 @@ No production writes or full sensitive exports implied by QA analysis. A matchin
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: equal source/target row counts but two refund records lose currency precision. Output: count check passes, precision invariant fails with sampled evidence; migration not declared correct.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
+
+## SQL Server / Azure SQL depth when applicable
+
+Use actual T-SQL/schema metadata, data grain, keys and relationships. Explain joins and cardinality; detect fan-out before comparing totals. Review null semantics, decimal precision, date/time handling and window/aggregation logic against confirmed rules. Correlate source, transformation, persisted and consumed records using actual identifiers and consistent snapshots.
+
+Inspect stored-procedure inputs, outputs, result sets, transactional behavior and side effects in an authorized environment. Use approved execution plans/index information and bounded diagnostics to investigate query behavior; do not infer that a missing index is the cause or create/alter indexes/procedures without scope. Avoid dialect assumptions when the project uses a different database.
+
+For fixture creation, specify the approved nonproduction scope, dependencies, reproducibility and cleanup before writing. AI-generated SQL requires accountable review of schema bindings, cardinality and expected results. Save the actual query and result provenance; a generated query is not database verification.
 
 ## Handoff
 

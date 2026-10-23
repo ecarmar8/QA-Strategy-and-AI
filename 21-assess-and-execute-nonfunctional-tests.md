@@ -44,9 +44,13 @@ No “secure/compliant/accessibility certified” claim from a few checks. No pa
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: latency measured but no agreed SLA. Output: observed distribution with workload context; target Pending; no performance pass asserted.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
+
+## Scope-specific assurance boundaries
+
+Separate business turnaround from technical processing/response targets. Confirm load models and actual service objectives before evaluating k6/JMeter or existing performance tooling. For accessibility, agree the standard/version/level and combine automated findings with manual assessment; no tool alone establishes conformance (https://www.w3.org/WAI/test-evaluate/). For regulated work, confirm actual firm/activity scope and obligations with responsible owners; a registration label alone does not establish every applicable rule.
 
 ## Handoff
 

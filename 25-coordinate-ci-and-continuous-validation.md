@@ -44,9 +44,15 @@ Do not invent pipeline IDs or supported tasks. No pipeline changes or deployment
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: tests exist but no pipeline write scope. Output: proposed stages and gates in Markdown; existing run read only; no YAML mutation or pipeline trigger.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
+
+## Verify actual enforcement, not only result publication
+
+Inspect test-runner exit behavior, failed/missing result handling, selected versus skipped required checks, continue-on-error, retries/quarantine and stage/branch dependencies. Prove in a safe scoped pipeline that a required failed/missing check prevents the intended progression; preserve failure artifacts and actual build/commit references. A test publisher is not by itself an enforced gate.
+
+For Azure PublishTestResults@2, inspect the documented failTaskOnFailedTests, failTaskOnFailureToPublishResults and failTaskOnMissingResultsFile settings and actual task support. Select them deliberately and verify the entire pipeline policy; do not rely on defaults or assume these flags detect skipped essential tests. Reference: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-test-results-v2?view=azure-pipelines
 
 ## Handoff
 

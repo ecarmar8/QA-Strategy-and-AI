@@ -1,11 +1,11 @@
 ---
 name: produce-clear-visual-quality-reports
-description: "Explain what was tested, what was observed and what decision follows for a CTO or delivery team."
+description: "Generate an English executive report centered on verified process-risk mitigation, shift-left prevention, functional/non-functional assurance and unresolved risks; exclude financial estimates."
 ---
 
 # 27 · Produce clear visual quality reports
 
-Version: 1.0 · Language: English · Role: Senior QA / QA Lead
+Version: 1.3 · Language: English · Role: Senior QA / QA Lead
 
 ## When to use
 
@@ -17,20 +17,28 @@ Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md) before acting. Reuse t
 
 ## Inputs and prerequisites
 
+Use reporting profile PROCESS_RISK and read [PROCESS_RISK_KPIS.md](PROCESS_RISK_KPIS.md). Available evidence concerns QA-observable processes, requirements, reviews and actual testing; financial access is not required.
+
 Verified metric dictionary, traceability, current evidence, essential risks, defects, release recommendation and audience/time limit.
 
 ## Procedure
 
-1. Lead with the decision needed, current build and recommendation. Explain the business consequence of the most important remaining risk in plain language.
-2. Show a compact dashboard: scope, status distribution, essential criteria evidence, distinct serious defects, blockers and trend only when comparable historical data exists. Always show counts and denominators.
-3. Use Markdown tables for exact values, Mermaid for dependencies/processes, and a simple bar/pie chart only where it clarifies actual data. Keep labels short and charts readable on GitHub. Provide a table fallback because rendering support varies.
-4. Link the chain “requirement → case → actual run/evidence → defect → retest → recommendation.” Separate planned, executed and observed outcomes, and label simulations prominently on every simulated figure.
-5. Prepare a 60-second talk track: objective, approach, evidence, decision and next action. Put detailed cases/evidence below the executive view, avoiding invented ROI or unsupported success claims.
-6. Redact sensitive artifacts, check links/values and explain gaps, freshness and limitations. Reports are reviewable drafts until publishing is authorized.
+1. Write all report labels, explanations and talk tracks in English. Use PROCESS_RISK. Lead with the QA recommendation, scoped process exposure and essential unresolved controls. Omit costs, savings, ROI, monetary exposure and financial-benefit sections, including placeholder cards; do not request financial data.
+2. Put six indicators on the executive page: Verified risk mitigation; Unresolved critical risks; Critical process assurance; Shift-left readiness; Preventive findings resolved; Non-functional assurance. Use skill 26 and PROCESS_RISK_KPIS.md for formulas, eligibility and missing-data rules. Show counts, denominators, sources, scope/build and limitations.
+3. Graph risk states as Verified mitigated, Control failed and Not verified. Show process assurance and the next action for each unresolved critical risk. Show chronology-supported preventive work and agreed non-functional scope/results. Absent data is Not measured; a known zero denominator is No data.
+4. Link risk → process → required control → case or other verification method → actual evidence → defect/retest → recommendation. A risk qualifies only when every required control has current implementation/verification evidence. Keep accepted/deferred risks visible. Passing tests and discovered defects do not prove future incidents were avoided.
+5. Put cases created/executed, Passed/Failed counts, pass rate, defects and automation statistics in supporting operational detail. Preserve their diagnostic traceability without using activity volume as the executive headline. Charts require exact counts; historical trends require comparable evidence.
+6. Prepare a 60-second explanation of process risks, preventive analysis, verified controls, remaining gaps and the next decision. Redact artifacts, check source/build freshness, label simulations prominently and keep QA recommendation separate from human release authority.
+7. Read HTML_REPORT_GUIDE.md. Copy reports/qa-report-template.html to reports/qa-report.html and retain schema_version 2.0, report_profile PROCESS_RISK and the process-risk layout. Replace embedded qa-report-data JSON using the actual risk/control/process/review/non-functional and run ledgers. Escape every < as \u003c in JSON strings. Do not invent timestamps or change unknown chronology into true/false.
+8. Validate the data, arithmetic and rendered report. Inspect the underlying evidence; renderer checks alone cannot establish truth or sufficiency. If execution is unavailable, still create the report with truthful Not Run/Not verified/Blocked states and appropriate missing inputs. Return the absolute HTML path. Open local files only when the tool policy permits, otherwise give double-click instructions. No server or external dependencies are required.
 
 ## Required output
 
+Deliver the six PROCESS_RISK indicators, process-risk/control matrix, functional/non-functional assurance, preventive evidence and next actions. Keep activity counts in supporting detail. The final browser deliverable is reports/qa-report.html. No financial KPI section or cards.
+
 Markdown report: Executive decision; Build/scope; 4–6 indicators with exact counts; status chart/table; essential risks; evidence links; next actions/owners. Include a short spoken script.
+
+For browser-visual requests, also deliver `reports/qa-report.html`, a self-contained English report using the bundled template. Use actual engagement evidence; the empty template is not a product result. Do not claim that an HTML report connects to MCP or executes tests itself.
 
 For each output, include artifact ID/version, source references, current scope/build where applicable, assumptions, unresolved questions, status, owner and next action. Use the relevant template in [91-REUSABLE-TEMPLATES.md](91-REUSABLE-TEMPLATES.md). Keep case definitions separate from execution records.
 
@@ -46,10 +54,14 @@ Business-rule proposals need owner confirmation; human release authority remains
 
 ## Small example
 
-Input: 3/6 Passed, 1 Failed, 1 Blocked, 1 Not Run, essential refund-cap failure. Output: labeled status table/chart and No-Go recommendation with the business reason first.
+Five confirmed critical risks: two have all required controls verified, one control fails and two remain unverified. Report verified mitigation 2/5 = 40% and three unresolved critical risks. Missing early-review chronology gives Not measured. This is mitigation coverage, not a 40% decrease in incident probability or a claim that future incidents were prevented. Case pass rate remains supporting detail.
+
+## Selected role profiles
+
+When the current request selects CapRelease, also read [profiles/caprelease/KPI_DICTIONARY.md](profiles/caprelease/KPI_DICTIONARY.md) and [profiles/caprelease/REPORTING.md](profiles/caprelease/REPORTING.md). Keep the six primary PROCESS_RISK indicators; derive supporting role diagnostics from reviewed ledgers using the profile calculator. Never infer company results from the vacancy or portfolio checks. Other engagements keep their actual context and do not automatically adopt this profile.
 
 ## Handoff
 
-28 for release gate review, 33 for approved publication, 99 CTO walkthrough for a fixture.
+28 for release gate review, 33 for approved publication, 99 for the executive briefing.
 
 Save a checkpoint with produced artifact references, decisions, blockers and the next skill. The numbering is a navigation aid, not an instruction to execute every track.

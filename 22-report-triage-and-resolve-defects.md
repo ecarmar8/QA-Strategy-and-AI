@@ -44,9 +44,9 @@ Do not call every unexpected observation a confirmed bug. Do not close a dispute
 
 Business-rule proposals need owner confirmation; human release authority remains separate from QA assessment. Do not repeat permission requests for actions already authorized in the current scope. Stop only the dependent action when its required evidence or authorization is missing.
 
-## Small example
+## Application boundary
 
-Input: developer says a second charge is harmless; confirmed rule requires one financial effect. Output: compare ledger evidence and operation IDs, pair reproduce, maintain critical impact and escalate to domain owner if unresolved.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 

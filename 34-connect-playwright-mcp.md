@@ -26,7 +26,7 @@ Read [90-OPERATING-CONTRACT.md](90-OPERATING-CONTRACT.md). Treat installation, t
 5. Build a capability map for navigation, current-page snapshot, input/click/keyboard, assertions/inspection and screenshot. Treat traces, video, network and arbitrary code execution as optional capabilities; do not assume they exist or enable broad execution merely for this demo.
 6. For an authorized target, open the browser and inspect the real page snapshot. Use fresh references from the current page for subsequent actions. Re-snapshot after navigation or changes; never reuse element references from another MCP/CLI session.
 7. For an attended demo, verify a visible browser window. MCP is headed by default in the documented setup; optional presentation pacing can use the configuration described in the setup guide. Fixed delays are not synchronization or proof of success.
-8. Confirm the target/build, agreed expectations, data isolation and allowed mutations before handing off to skill 20. A TodoMVC connection exercise does not validate payment behavior or grant Azure access.
+8. Confirm the target/build, agreed expectations, data isolation and allowed mutations before handing off to skill 20. A connection exercise does not validate product behavior or grant external-system access.
 9. Capture a connection receipt. On failure, distinguish missing executable/PATH, package retrieval, MCP startup/tool listing, browser launch, target reachability, authentication and business assertion failure. Report the actual stage and suggested correction; do not manufacture a pass.
 
 ## Required output
@@ -56,10 +56,10 @@ If the current LLM has no MCP host or local tool capability, produce the setup i
 - Do not claim this chat or the user's machine was configured by reading this file.
 - Apply skill 32 before publication and reuse existing authorization without repeated questions.
 
-## Small example
+## Application boundary
 
-Input: Cursor project, real Playwright tools exposed, approved TodoMVC exercise. Output: Connected and target snapshot observed, capability map recorded; cases still Not Run until skill 20 performs them. If no MCP host exists, output setup plan and Unverified connection instead.
+Apply this procedure to the actual product sources and current scope. Missing rules remain Pending definition; proposed work is not executed evidence.
 
 ## Handoff
 
-Use [20-execute-web-tests-with-playwright.md](20-execute-web-tests-with-playwright.md) for actual web execution, [CTO_LIVE_DEMO.md](CTO_LIVE_DEMO.md) for the three-case walkthrough, and skills 26–28 for the evidence-based report. Save a checkpoint with the connection receipt and remaining prerequisites.
+Use [20-execute-web-tests-with-playwright.md](20-execute-web-tests-with-playwright.md) for actual web execution, and skills 26–28 for the evidence-based report. Save a checkpoint with the connection receipt and remaining prerequisites.
