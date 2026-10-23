@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "scope": "Local contract verification; project cases require confirmed product rules.",
+  "cases": [
+    {
+      "id": "API-00",
+      "title": "Verify target identity",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment; start a new collection iteration at API-00.",
+          "expected": "Local target is reachable; API-00 initializes a fresh workspace."
+        },
+        {
+          "action": "GET /health",
+          "expected": "HTTP 200. Correct local target"
+        }
+      ]
+    },
+    {
+      "id": "API-01",
+      "title": "Reject unauthenticated access",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-00 in order; stop before API-01.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records",
+          "expected": "HTTP 401. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-02",
+      "title": "Reject empty record name",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-01 in order; stop before API-02.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \" \"}",
+          "expected": "HTTP 400. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-03",
+      "title": "Invalid input has no persisted effect",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-02 in order; stop before API-03.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records",
+          "expected": "HTTP 200. Workspace remains empty"
+        }
+      ]
+    },
+    {
+      "id": "API-04",
+      "title": "Create a record",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-03 in order; stop before API-04.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Primary record\"}",
+          "expected": "HTTP 201. Record schema"
+        }
+      ]
+    },
+    {
+      "id": "API-05",
+      "title": "Verify persisted values",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-04 in order; stop before API-05.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records/{{recordId}}",
+          "expected": "HTTP 200. Persisted values are correct"
+        }
+      ]
+    },
+    {
+      "id": "API-06",
+      "title": "Enforce workspace isolation",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-05 in order; stop before API-06.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records/{{recordId}}",
+          "expected": "HTTP 404. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-07",
+      "title": "First idempotent request creates one record",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-06 in order; stop before API-07.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Idempotent record\"}",
+          "expected": "HTTP 201. Record schema"
+        }
+      ]
+    },
+    {
+      "id": "API-08",
+      "title": "Replay returns the same record",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-07 in order; stop before API-08.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Idempotent record\"}",
+          "expected": "HTTP 200. Same identity on replay"
+        }
+      ]
+    },
+    {
+      "id": "API-09",
+      "title": "Reject conflicting idempotency payload",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-08 in order; stop before API-09.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Conflicting record\"}",
+          "expected": "HTTP 409. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-10",
+      "title": "Complete the record",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-09 in order; stop before API-10.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "PATCH /api/records/{{recordId}} with {\"status\": \"completed\"}",
+          "expected": "HTTP 200. Status completed"
+        }
+      ]
+    },
+    {
+      "id": "API-11",
+      "title": "Reject invalid state transition value",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-10 in order; stop before API-11.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "PATCH /api/records/{{recordId}} with {\"status\": \"unknown\"}",
+          "expected": "HTTP 400. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-12",
+      "title": "Invalid state has no effect",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-11 in order; stop before API-12.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records/{{recordId}}",
+          "expected": "HTTP 200. Completed state preserved"
+        }
+      ]
+    },
+    {
+      "id": "API-13",
+      "title": "Detect rate limiting",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-12 in order; stop before API-13.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Retry record\"}",
+          "expected": "HTTP 429. Retry-After is explicit"
+        }
+      ]
+    },
+    {
+      "id": "API-14",
+      "title": "One bounded retry recovers",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-13 in order; stop before API-14.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"Retry record\"}",
+          "expected": "HTTP 201. Record schema"
+        }
+      ]
+    },
+    {
+      "id": "API-15",
+      "title": "Accept the maximum name boundary",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-14 in order; stop before API-15.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "expected": "HTTP 201. Record schema"
+        }
+      ]
+    },
+    {
+      "id": "API-16",
+      "title": "Reject a name above the maximum",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-15 in order; stop before API-16.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "POST /api/records with {\"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "expected": "HTTP 400. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-17",
+      "title": "Verify no duplicate or invalid records",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-16 in order; stop before API-17.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records",
+          "expected": "HTTP 200. Exactly four expected records"
+        }
+      ]
+    },
+    {
+      "id": "API-18",
+      "title": "Clean up recordId",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-17 in order; stop before API-18.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "DELETE /api/records/{{recordId}}",
+          "expected": "HTTP 204. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-19",
+      "title": "Clean up idemId",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-18 in order; stop before API-19.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "DELETE /api/records/{{idemId}}",
+          "expected": "HTTP 204. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-20",
+      "title": "Clean up retryId",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-19 in order; stop before API-20.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "DELETE /api/records/{{retryId}}",
+          "expected": "HTTP 204. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-21",
+      "title": "Clean up boundaryId",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-20 in order; stop before API-21.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "DELETE /api/records/{{boundaryId}}",
+          "expected": "HTTP 204. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-22",
+      "title": "Deleted record cannot be retrieved",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-21 in order; stop before API-22.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records/{{recordId}}",
+          "expected": "HTTP 404. The documented local contract is respected."
+        }
+      ]
+    },
+    {
+      "id": "API-23",
+      "title": "Verify complete cleanup",
+      "layer": "API",
+      "source": "automation/postman/QA_API.postman_collection.json",
+      "steps": [
+        {
+          "action": "Start the local contract target and select the Postman local environment. Run the complete collection from API-00 through API-22 in order; stop before API-23.",
+          "expected": "Local contract version 1.0 is ready; predecessor requests pass and prepare the referenced workspace, record IDs and state."
+        },
+        {
+          "action": "GET /api/records",
+          "expected": "HTTP 200. No residual records"
+        }
+      ]
+    },
+    {
+      "id": "UI-01",
+      "title": "Create a record through UI and verify persistence",
+      "layer": "UI",
+      "source": "automation/ui/records.spec.ts",
+      "steps": [
+        {
+          "action": "Open the record page in a fresh workspace.",
+          "expected": "Record form and empty list are visible."
+        },
+        {
+          "action": "Enter Cross-layer record and select Create record.",
+          "expected": "Success is announced and exactly one open record is listed and persisted."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The created record remains visible."
+        }
+      ]
+    },
+    {
+      "id": "UI-02",
+      "title": "Reject empty UI input without side effects",
+      "layer": "UI",
+      "source": "automation/ui/records.spec.ts",
+      "steps": [
+        {
+          "action": "Open a fresh workspace; submit an empty name.",
+          "expected": "An actionable validation error is announced and no record is persisted."
+        }
+      ]
+    },
+    {
+      "id": "UI-03",
+      "title": "Complete a record from the UI",
+      "layer": "UI",
+      "source": "automation/ui/records.spec.ts",
+      "steps": [
+        {
+          "action": "Create an open record in the isolated workspace.",
+          "expected": "Open record appears in the list."
+        },
+        {
+          "action": "Select Complete for that record.",
+          "expected": "UI and persisted state both show completed."
+        }
+      ]
+    },
+    {
+      "id": "NFR-01",
+      "title": "Automated accessibility baseline",
+      "layer": "Accessibility",
+      "source": "automation/nonfunctional/baselines.spec.ts",
+      "steps": [
+        {
+          "action": "Open the local page and run axe WCAG 2.0/2.1 A and AA rule tags.",
+          "expected": "No violations in the configured automated rules; manual assessment remains separate."
+        }
+      ]
+    },
+    {
+      "id": "NFR-02",
+      "title": "Keyboard record creation",
+      "layer": "Accessibility",
+      "source": "automation/nonfunctional/baselines.spec.ts",
+      "steps": [
+        {
+          "action": "Focus Record name; type Keyboard record; press Tab.",
+          "expected": "Create record receives visible keyboard focus."
+        },
+        {
+          "action": "Press Enter.",
+          "expected": "Creation is announced and exactly one record is persisted."
+        }
+      ]
+    },
+    {
+      "id": "NFR-03",
+      "title": "Cache and MIME response configuration",
+      "layer": "Security baseline",
+      "source": "automation/nonfunctional/baselines.spec.ts",
+      "steps": [
+        {
+          "action": "Request the local page and inspect response headers.",
+          "expected": "Cache-Control is no-store and X-Content-Type-Options is nosniff."
+        }
+      ]
+    }
+  ]
+}

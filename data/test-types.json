@@ -1,0 +1,322 @@
+[
+  {
+    "category": "Level",
+    "type": "Unit / component",
+    "skills": "16, 25",
+    "approach": "Developer-owned unit runner; QA reviews risk/oracles",
+    "capability": "Product binding required",
+    "evidence": "Rules, branches and component failures"
+  },
+  {
+    "category": "Level",
+    "type": "Component integration",
+    "skills": "17, 18",
+    "approach": "Postman / SQL / component harness",
+    "capability": "Product binding required",
+    "evidence": "Boundary behavior, data and transactional effects"
+  },
+  {
+    "category": "Level",
+    "type": "System / end-to-end",
+    "skills": "10, 19, 20",
+    "approach": "Playwright + Postman + data oracle",
+    "capability": "Implemented local baseline",
+    "evidence": "UI-01 and UI-03 persisted effects"
+  },
+  {
+    "category": "Level",
+    "type": "Acceptance / UAT",
+    "skills": "04, 11, 19, 28",
+    "approach": "Business-owner acceptance sessions",
+    "capability": "Manual / product binding",
+    "evidence": "Business criteria, actual outcomes and sign-off"
+  },
+  {
+    "category": "Functional",
+    "type": "Positive / negative behavior",
+    "skills": "10, 17, 20",
+    "approach": "Postman + Playwright",
+    "capability": "Implemented local baseline",
+    "evidence": "Creation, invalid input and no unintended effect"
+  },
+  {
+    "category": "Functional",
+    "type": "Boundary values / equivalence",
+    "skills": "10, 17",
+    "approach": "Postman; decision tables",
+    "capability": "Implemented local baseline",
+    "evidence": "Empty, 80-character and 81-character names"
+  },
+  {
+    "category": "Functional",
+    "type": "Business rules / decision tables",
+    "skills": "05, 06, 10",
+    "approach": "Rule matrix + independent oracle",
+    "capability": "Product binding required",
+    "evidence": "Confirmed combinations and decisions"
+  },
+  {
+    "category": "Functional",
+    "type": "State transition / workflow",
+    "skills": "05, 10, 17, 20",
+    "approach": "Postman + Playwright",
+    "capability": "Implemented local baseline",
+    "evidence": "Open/completed and invalid status preservation"
+  },
+  {
+    "category": "Functional",
+    "type": "Roles / permissions / isolation",
+    "skills": "10, 17, 21",
+    "approach": "Postman + reviewed role matrix",
+    "capability": "Implemented local baseline",
+    "evidence": "401 and cross-workspace 404; full RBAC requires product roles"
+  },
+  {
+    "category": "Functional",
+    "type": "CRUD / search / filter / sort / pagination",
+    "skills": "10, 17, 19, 20",
+    "approach": "Postman + Playwright + SQL",
+    "capability": "Partial local baseline",
+    "evidence": "CRUD implemented; listing is not pagination/search coverage"
+  },
+  {
+    "category": "Functional",
+    "type": "API schema / contract / version compatibility",
+    "skills": "17",
+    "approach": "Postman schema + consumer/provider contracts",
+    "capability": "Partial local baseline",
+    "evidence": "Local response schema; external consumer/provider binding required"
+  },
+  {
+    "category": "Functional",
+    "type": "Third-party / asynchronous integration",
+    "skills": "03, 17",
+    "approach": "Postman, provider sandbox, message harness",
+    "capability": "Product binding required",
+    "evidence": "Mapping, ordering, callbacks, duplicates and consistency"
+  },
+  {
+    "category": "Functional",
+    "type": "Data / ETL / reconciliation / lineage",
+    "skills": "06, 18",
+    "approach": "SQL Server / Azure SQL queries + independent oracle",
+    "capability": "Product binding required",
+    "evidence": "Source-to-target counts, row values, transformations and freshness"
+  },
+  {
+    "category": "Functional",
+    "type": "Migration / schema / rollback",
+    "skills": "18, 29",
+    "approach": "Versioned SQL migration and restore rehearsal",
+    "capability": "Product binding required",
+    "evidence": "Preserved business data, compatibility and rollback verification"
+  },
+  {
+    "category": "Functional",
+    "type": "Reports / calculations / exports",
+    "skills": "06, 10, 18",
+    "approach": "Independent calculation, SQL and file parsing",
+    "capability": "Partial local baseline",
+    "evidence": "CSV escaping and format verified; product calculations require rules"
+  },
+  {
+    "category": "Functional",
+    "type": "Localization / internationalization",
+    "skills": "10, 19, 20",
+    "approach": "Locale matrix + manual / browser checks",
+    "capability": "Product binding required",
+    "evidence": "Dates, numbers, Unicode, currency and direction where applicable"
+  },
+  {
+    "category": "Change strategy",
+    "type": "Smoke / build verification",
+    "skills": "13, 14",
+    "approach": "Fast selected UI/API controls",
+    "capability": "Ready for risk-based selection",
+    "evidence": "Essential environment and critical path signals"
+  },
+  {
+    "category": "Change strategy",
+    "type": "Sanity / focused verification",
+    "skills": "14, 23",
+    "approach": "Focused change and fix checks",
+    "capability": "Product binding required",
+    "evidence": "Changed rule and nearby risk"
+  },
+  {
+    "category": "Change strategy",
+    "type": "Confirmation / retest",
+    "skills": "22, 23",
+    "approach": "Exact defect reproduction and fix verification",
+    "capability": "Product binding required",
+    "evidence": "Original failure, actual fix and environment"
+  },
+  {
+    "category": "Change strategy",
+    "type": "Regression / impact analysis",
+    "skills": "03, 11, 24",
+    "approach": "Dependency/risk selection + Postman/Playwright",
+    "capability": "Implemented local baseline",
+    "evidence": "Six browser checks and ordered API suite; product scope needs impact map"
+  },
+  {
+    "category": "Technique",
+    "type": "Exploratory / session-based testing",
+    "skills": "19",
+    "approach": "Charters, notes, evidence and debrief",
+    "capability": "Manual procedure ready",
+    "evidence": "Timeboxed questions, observations and newly discovered risks"
+  },
+  {
+    "category": "Technique",
+    "type": "Static review / shift-left / BDD examples",
+    "skills": "04, 06, 11",
+    "approach": "Requirement review, decision tables, example mapping",
+    "capability": "Manual procedure ready",
+    "evidence": "Ambiguities resolved before code and source-linked criteria"
+  },
+  {
+    "category": "Technique",
+    "type": "Pairwise / combinatorial / error guessing",
+    "skills": "10, 19",
+    "approach": "Risk-selected combinations and experience-based hypotheses",
+    "capability": "Product binding required",
+    "evidence": "Configuration interactions and boundary hypotheses"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Performance / load",
+    "skills": "21",
+    "approach": "k6 or JMeter + service telemetry",
+    "capability": "Product binding required",
+    "evidence": "Workload, throughput, p50/p95/p99, errors and resource limits"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Stress / breakpoint / scalability",
+    "skills": "21",
+    "approach": "Bounded k6/JMeter and infrastructure telemetry",
+    "capability": "Product binding required",
+    "evidence": "Capacity curve, saturation, autoscaling and stop rule"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Spike / burst",
+    "skills": "21",
+    "approach": "Arrival-rate workload and queue telemetry",
+    "capability": "Product binding required",
+    "evidence": "Sudden load, queue age, backpressure and recovery"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Soak / endurance / volume",
+    "skills": "18, 21",
+    "approach": "Long-run workload, large dataset and resource trends",
+    "capability": "Product binding required",
+    "evidence": "Leaks, degradation, storage growth and representative data size"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Resilience / dependency failures",
+    "skills": "17, 21",
+    "approach": "Controlled faults, dependency stubs and observability",
+    "capability": "Partial local baseline",
+    "evidence": "429 then bounded retry verified locally; wider failures require product"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Retries / idempotency / fault tolerance",
+    "skills": "17, 21",
+    "approach": "Postman and fault controls",
+    "capability": "Implemented local baseline",
+    "evidence": "Same request produces one effect; conflict and retry assertions"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Recovery / failover / disaster recovery",
+    "skills": "18, 21, 29",
+    "approach": "Approved recovery and restore rehearsal",
+    "capability": "Product binding required",
+    "evidence": "Measured RTO/RPO versus agreed objectives; integrity after restore"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Security / abuse / vulnerability assessment",
+    "skills": "17, 21",
+    "approach": "Authorized threat-driven tests, SAST/DAST and specialist review",
+    "capability": "Partial local baseline",
+    "evidence": "Authentication/isolation/MIME checks only; no penetration-testing claim"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Privacy / retention / auditability",
+    "skills": "06, 18, 21",
+    "approach": "Data inventory, access/deletion/audit verification",
+    "capability": "Product binding required",
+    "evidence": "Data minimization, authorized disclosure, retention and usable audit trail"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Accessibility",
+    "skills": "19, 20, 21",
+    "approach": "axe + keyboard + manual assistive technology review",
+    "capability": "Partial local baseline",
+    "evidence": "Automated WCAG-tag checks and keyboard path; manual conformance remains"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Usability",
+    "skills": "19, 21",
+    "approach": "Representative-user task observations",
+    "capability": "Manual / product binding",
+    "evidence": "Task success, errors, comprehension and accessible recovery"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Compatibility / responsive / cross-browser",
+    "skills": "20, 21",
+    "approach": "Playwright browser/device matrix + actual devices",
+    "capability": "Product binding required",
+    "evidence": "Supported browser/OS/viewport matrix; local suite runs Chromium only"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Installability / upgrade / portability",
+    "skills": "13, 21, 25",
+    "approach": "Clean install, upgrade and environment matrix",
+    "capability": "Product binding required",
+    "evidence": "Supported versions, repeatability and configuration preservation"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Observability / operability / supportability",
+    "skills": "21, 25, 29",
+    "approach": "Logs, metrics, trace correlation and runbooks",
+    "capability": "Product binding required",
+    "evidence": "Actionable detection, correlation, safe operations and diagnosis"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Maintainability / testability",
+    "skills": "13, 16, 25, 30",
+    "approach": "Code/architecture review and feedback measurements",
+    "capability": "Procedure ready",
+    "evidence": "Stable seams, deterministic fixtures and actionable failures"
+  },
+  {
+    "category": "Non-functional",
+    "type": "Reliability / availability / consistency",
+    "skills": "17, 18, 21, 29",
+    "approach": "SLO evidence, concurrency and consistency checks",
+    "capability": "Product binding required",
+    "evidence": "Agreed failure rates/windows and correctness under concurrent operations"
+  },
+  {
+    "category": "Specialized",
+    "type": "Mobile / desktop / offline / hardware / AI systems",
+    "skills": "08, 19, 21, 32",
+    "approach": "Platform-specific tools and domain specialists",
+    "capability": "Applicability review required",
+    "evidence": "Select platform and model-specific risks; no universal execution claim"
+  }
+]

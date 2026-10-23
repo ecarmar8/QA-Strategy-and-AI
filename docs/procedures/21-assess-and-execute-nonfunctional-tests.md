@@ -57,3 +57,7 @@ Separate business turnaround from technical processing/response targets. Confirm
 04 for missing objectives, 22 for findings, 28 for essential gate impact.
 
 Save a checkpoint with produced artifact references, decisions, blockers and the next skill. The numbering is a navigation aid, not an instruction to execute every track.
+
+## Test-type and implementation map
+
+Use [the full test-type matrix](../test-types.md) to select performance, scalability, resilience, recovery, security, privacy, accessibility, compatibility and operational checks. The local automated subset and remaining product/specialist work are explicit. Do not treat the catalog as evidence of execution.

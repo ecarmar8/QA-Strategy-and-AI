@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "scope": "Verification of the included local framework contract only. No external product or production readiness assessment.",
+  "checkedAt": "2026-10-23T13:12:50.731990+00:00",
+  "api": {
+    "tool": "Postman collection v2.1 / Newman 6.2.3 compatibility runner",
+    "requests": {
+      "total": 24,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 37,
+      "pending": 0,
+      "failed": 0
+    },
+    "failures": 0,
+    "source": "npm run test:api; reports/automation/postman.json"
+  },
+  "browser": {
+    "tool": "Playwright / Chromium",
+    "stats": {
+      "startTime": "2026-10-23T13:11:56.021Z",
+      "duration": 3368.955,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "source": "npm run test:automation; latest complete Playwright JSON report",
+    "runtime": "Managed Chromium executable with sandbox-compatible launch configuration; bundled browser download unavailable in this environment"
+  },
+  "mcp": {
+    "checkedAt": "2026-10-23T13:08:01.838Z",
+    "status": "Blocked",
+    "handshake": true,
+    "discoveredTools": [
+      "browser_close",
+      "browser_resize",
+      "browser_console_messages",
+      "browser_handle_dialog",
+      "browser_emulate_media",
+      "browser_evaluate",
+      "browser_file_upload",
+      "browser_drop",
+      "browser_find",
+      "browser_fill_form",
+      "browser_press_key",
+      "browser_type",
+      "browser_navigate",
+      "browser_navigate_back",
+      "browser_network_requests",
+      "browser_network_request",
+      "browser_run_code_unsafe",
+      "browser_take_screenshot",
+      "browser_snapshot",
+      "browser_click",
+      "browser_drag",
+      "browser_hover",
+      "browser_select_option",
+      "browser_tabs",
+      "browser_wait_for"
+    ],
+    "reason": "MCP navigation did not verify the local page: {\"content\":[{\"type\":\"text\",\"text\":\"### Error\\nError: async initializeServer: listen EPERM: operation not permitted /tmp/pw-7505d64a/browser/browser-69f8c0.sock\"}],\"isError\":true}",
+    "scope": "Local environment only; no user client connection established"
+  },
+  "azureExport": {
+    "caseDefinitions": 30,
+    "localValidation": "Three passing CSV validation checks, including round trip through Python csv.DictReader",
+    "tenantImport": "Not performed; user must supply real Area Path, Assigned To and permitted State",
+    "browserValidation": {
+      "status": "Passed",
+      "checks": [
+        "Automation navigation and test-type filtering",
+        "CSV download of all 30 cases",
+        "Single-case selection download",
+        "Custom catalog upload and HTML escaping",
+        "No horizontal overflow at 320,390,768,1440",
+        "No browser page errors"
+      ]
+    }
+  },
+  "limitations": [
+    "Framework-local outcomes are not product KPIs or business achievements.",
+    "MCP handshake and tool discovery succeeded; navigation is blocked by this runtime prohibiting the server Unix-domain socket (EPERM). Client trust/start and successful navigation must be verified on the user machine.",
+    "Accessibility automation covers the configured rules and keyboard path, not full conformance.",
+    "Load, stress, soak, disaster recovery, full security assessment and actual SQL/provider integration remain product-bound assessments in the test-type matrix."
+  ],
+  "combinedCommand": {
+    "command": "npm run test:automation",
+    "exitCode": 0,
+    "target": "Included local contract, managed Chromium executable"
+  }
+}

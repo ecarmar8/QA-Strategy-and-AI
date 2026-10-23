@@ -1,0 +1,6 @@
+import { test, expect } from '@playwright/test';
+// Rename after binding to actual approved behavior; .example files are not executable tests.
+test('PROJECT-001 verified critical workflow',async({page})=>{
+  // Replace with actual source-backed route, locator and expected business outcome.
+  throw new Error('Bind this case to the actual application, data and confirmed oracle before execution.');
+});

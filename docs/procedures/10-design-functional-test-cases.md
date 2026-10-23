@@ -53,3 +53,7 @@ Apply this procedure to the actual product sources and current scope. Missing ru
 11 for review, 12–13 for readiness, 15 for automation selection.
 
 Save a checkpoint with produced artifact references, decisions, blockers and the next skill. The numbering is a navigation aid, not an instruction to execute every track.
+
+## Downloadable cases
+
+Use [the Azure Test Plans exporter](../../test-case-export.html) to select reviewed cases and download numbered action/expected-result CSV rows. [The catalog schema](../azure-test-cases.md) accepts project cases without inventing outcomes. Export is separate from execution and publication.

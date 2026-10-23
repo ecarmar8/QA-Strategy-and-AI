@@ -63,3 +63,7 @@ Apply this procedure to the actual product sources and current scope. Missing ru
 ## Handoff
 
 Use [20-execute-web-tests-with-playwright.md](20-execute-web-tests-with-playwright.md) for actual web execution, and skills 26–28 for the evidence-based report. Save a checkpoint with the connection receipt and remaining prerequisites.
+
+## Workspace implementation
+
+[The automation guide](../automation.md#mcp-connections) identifies the committed Claude Code, Gemini CLI and VS Code configurations and the pinned local launcher. `npm run mcp:check` verifies handshake, discovery and actual navigation; any failed or blocked check is reported with its reason. Workspace configuration alone is not evidence of a successful user-client connection.

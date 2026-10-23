@@ -14,7 +14,7 @@ for skill in skills:
         assert entry.is_file(),entry
         assert f'name: {skill["name"]}\n' in entry.read_text(),entry
 for p in ROOT.rglob('*.md'):
-    if '.git' in p.parts:
+    if any(x in p.parts for x in ('.git','node_modules')):
         continue
     for target in re.findall(r'\]\(([^)]+)\)',p.read_text()):
         if '://' in target or target.startswith(('#','mailto:')) or '<' in target:

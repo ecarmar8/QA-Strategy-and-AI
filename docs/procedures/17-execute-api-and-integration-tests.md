@@ -59,3 +59,7 @@ Trace the input through transformation/storage to the actual consuming process; 
 18 for persisted-data validation, 22 for failures, 24 for regression.
 
 Save a checkpoint with produced artifact references, decisions, blockers and the next skill. The numbering is a navigation aid, not an instruction to execute every track.
+
+## Executable Postman implementation
+
+The dedicated API suite is [the Postman collection](../../automation/postman/QA_API.postman_collection.json), with [local environment](../../automation/postman/Local_Contract.postman_environment.json). Use [execution instructions](../automation.md) and confirm real product contracts before adapting it.

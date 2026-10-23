@@ -1,2 +1,9 @@
 __pycache__/
 *.py[cod]
+
+node_modules/
+reports/automation/
+test-results/
+playwright-report/
+reports/application/
+exports/

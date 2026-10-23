@@ -26,3 +26,7 @@ Use the process-risk metrics and keep artifacts in English.
 ```
 
 For client discovery and tools, see [LLM clients](docs/llm-clients.md). Analysis does not require a browser connection; execution requires the actual tools, target and evidence.
+
+## Executable tooling
+
+Start with [automation setup](docs/automation.md), the [test-type and skill matrix](docs/test-types.md) and the [Azure case exporter](test-case-export.html). APIs use Postman; UI uses Playwright. The framework is verified against its included local contract. Bind actual product rules before claiming application coverage.

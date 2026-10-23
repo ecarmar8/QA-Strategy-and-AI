@@ -12,6 +12,18 @@ My QA approach brings together 25+ years of software quality work across complex
 
 Open `index.html` locally for the interactive view. GitHub's file viewer displays its source; the visual below and the Markdown diagrams render directly in the repository. The interactive view also works with ordinary static hosting when configured separately.
 
+## Execute and show the work
+
+**[Automation setup](docs/automation.md)** · **[Test-type coverage and skills](docs/test-types.md)** · **[Download cases for Azure Test Plans](test-case-export.html)**
+
+```bash
+npm ci
+npx playwright install chromium
+npm run test:automation
+```
+
+Postman owns the API suite. Playwright verifies UI and baseline accessibility/configuration. Workspace MCP configurations connect compatible clients after trust/start. The self-contained case exporter selects cases and produces Azure Test Plans CSV. The included target verifies the framework locally; real product coverage requires confirmed contracts, rules and environment. See [recorded verification](data/framework-validation.json).
+
 ## The operating cycle
 
 ![From understanding to continuous improvement](assets/method-map.svg)

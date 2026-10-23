@@ -1,0 +1,2 @@
+const {spawnSync}=require('node:child_process');const path=require('node:path');const root=path.resolve(__dirname,'..');let failed=false;
+for(const args of [['scripts/run-postman.cjs'],['node_modules/@playwright/test/cli.js','test']]){const r=spawnSync(process.execPath,args,{cwd:root,env:process.env,stdio:'inherit'});if(r.error)console.error(r.error.message);if(r.status!==0)failed=true}process.exitCode=failed?1:0;

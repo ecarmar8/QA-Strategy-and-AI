@@ -1,0 +1,28 @@
+{
+  "name": "qa-strategy-and-ai",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test:automation": "node scripts/run-automation.cjs",
+    "test:api": "node scripts/run-postman.cjs",
+    "test:ui": "playwright test --project=chromium-ui",
+    "test:nfr": "playwright test --project=quality-attributes",
+    "report:automation": "playwright show-report reports/automation/html",
+    "serve:contract": "node automation/support/contract-server.mjs",
+    "export:azure": "node scripts/export-azure.cjs",
+    "mcp:check": "node scripts/check-playwright-mcp.cjs",
+    "typecheck": "tsc --noEmit",
+    "test:export": "node --test tests/test_azure_export.cjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/mcp": "0.0.83",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "newman": "6.2.3",
+    "typescript": "7.0.2"
+  }
+}

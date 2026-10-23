@@ -1,0 +1,958 @@
+{
+  "info": {
+    "name": "QA Strategy | Local API Contract",
+    "description": "Executable API automation in Postman. Local synthetic verification only; adapt contracts before use on a real product.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "workspace",
+      "value": ""
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if(pm.info.requestName.startsWith('API-00 ')){pm.collectionVariables.set('workspace','qa-'+pm.variables.replaceIn('{{$guid}}'));}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "API-00 Verify target identity",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/health",
+        "description": "API-00: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-00 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Correct local target',()=>pm.expect(pm.response.json().target).to.eql('local-contract'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-01 Reject unauthenticated access",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-01: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-01 HTTP 401',()=>pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-02 Reject empty record name",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-02: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \" \"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-02 HTTP 400',()=>pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-03 Invalid input has no persisted effect",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-03: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-03 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Workspace remains empty',()=>pm.expect(pm.response.json()).to.eql([]));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-04 Create a record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-04: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Primary record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-04 HTTP 201',()=>pm.response.to.have.status(201));",
+              "pm.test('Record schema',()=>pm.response.to.have.jsonSchema({\"type\": \"object\", \"required\": [\"id\", \"name\", \"status\"], \"additionalProperties\": false, \"properties\": {\"id\": {\"type\": \"string\", \"format\": \"uuid\"}, \"name\": {\"type\": \"string\", \"minLength\": 1, \"maxLength\": 80}, \"status\": {\"enum\": [\"open\", \"completed\"]}}}));",
+              "pm.collectionVariables.set('recordId',pm.response.json().id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-05 Verify persisted values",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-05: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-05 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Persisted values are correct',()=>pm.expect(pm.response.json()).to.deep.eql({id:pm.collectionVariables.get('recordId'),name:'Primary record',status:'open'}));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-06 Enforce workspace isolation",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}-other"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-06: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-06 HTTP 404',()=>pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-07 First idempotent request creates one record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{workspace}}-idem"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-07: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Idempotent record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-07 HTTP 201',()=>pm.response.to.have.status(201));",
+              "pm.test('Record schema',()=>pm.response.to.have.jsonSchema({\"type\": \"object\", \"required\": [\"id\", \"name\", \"status\"], \"additionalProperties\": false, \"properties\": {\"id\": {\"type\": \"string\", \"format\": \"uuid\"}, \"name\": {\"type\": \"string\", \"minLength\": 1, \"maxLength\": 80}, \"status\": {\"enum\": [\"open\", \"completed\"]}}}));",
+              "pm.collectionVariables.set('idemId',pm.response.json().id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-08 Replay returns the same record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{workspace}}-idem"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-08: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Idempotent record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-08 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Same identity on replay',()=>pm.expect(pm.response.json().id).to.eql(pm.collectionVariables.get('idemId')));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-09 Reject conflicting idempotency payload",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{workspace}}-idem"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-09: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Conflicting record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-09 HTTP 409',()=>pm.response.to.have.status(409));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-10 Complete the record",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-10: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"status\": \"completed\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-10 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Status completed',()=>pm.expect(pm.response.json().status).to.eql('completed'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-11 Reject invalid state transition value",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-11: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"status\": \"unknown\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-11 HTTP 400',()=>pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-12 Invalid state has no effect",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-12: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-12 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Completed state preserved',()=>pm.expect(pm.response.json().status).to.eql('completed'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-13 Detect rate limiting",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "x-qa-fault",
+            "value": "throttle-once"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{workspace}}-retry"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-13: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Retry record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-13 HTTP 429',()=>pm.response.to.have.status(429));",
+              "pm.test('Retry-After is explicit',()=>pm.expect(pm.response.headers.get('Retry-After')).to.eql('0'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-14 One bounded retry recovers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "x-qa-fault",
+            "value": "throttle-once"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{workspace}}-retry"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-14: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Retry record\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-14 HTTP 201',()=>pm.response.to.have.status(201));",
+              "pm.test('Record schema',()=>pm.response.to.have.jsonSchema({\"type\": \"object\", \"required\": [\"id\", \"name\", \"status\"], \"additionalProperties\": false, \"properties\": {\"id\": {\"type\": \"string\", \"format\": \"uuid\"}, \"name\": {\"type\": \"string\", \"minLength\": 1, \"maxLength\": 80}, \"status\": {\"enum\": [\"open\", \"completed\"]}}}));",
+              "pm.collectionVariables.set('retryId',pm.response.json().id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-15 Accept the maximum name boundary",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-15: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-15 HTTP 201',()=>pm.response.to.have.status(201));",
+              "pm.test('Record schema',()=>pm.response.to.have.jsonSchema({\"type\": \"object\", \"required\": [\"id\", \"name\", \"status\"], \"additionalProperties\": false, \"properties\": {\"id\": {\"type\": \"string\", \"format\": \"uuid\"}, \"name\": {\"type\": \"string\", \"minLength\": 1, \"maxLength\": 80}, \"status\": {\"enum\": [\"open\", \"completed\"]}}}));",
+              "pm.collectionVariables.set('boundaryId',pm.response.json().id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-16 Reject a name above the maximum",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-16: local contract version 1.0. Isolated synthetic data.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-16 HTTP 400',()=>pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-17 Verify no duplicate or invalid records",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-17: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-17 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('Exactly four expected records',()=>{const rows=pm.response.json();pm.expect(rows).to.have.lengthOf(4);pm.expect(new Set(rows.map(x=>x.id)).size).to.eql(4);pm.expect(rows.filter(x=>x.name==='Retry record')).to.have.lengthOf(1)});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-18 Clean up recordId",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-18: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-18 HTTP 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-19 Clean up idemId",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{idemId}}",
+        "description": "API-19: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-19 HTTP 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-20 Clean up retryId",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{retryId}}",
+        "description": "API-20: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-20 HTTP 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-21 Clean up boundaryId",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{boundaryId}}",
+        "description": "API-21: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-21 HTTP 204',()=>pm.response.to.have.status(204));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-22 Deleted record cannot be retrieved",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records/{{recordId}}",
+        "description": "API-22: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-22 HTTP 404',()=>pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-23 Verify complete cleanup",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-workspace-id",
+            "value": "{{workspace}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/records",
+        "description": "API-23: local contract version 1.0. Isolated synthetic data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('API-23 HTTP 200',()=>pm.response.to.have.status(200));",
+              "pm.test('No residual records',()=>pm.expect(pm.response.json()).to.eql([]));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

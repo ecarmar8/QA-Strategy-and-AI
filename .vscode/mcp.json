@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "scripts/start-playwright-mcp.cjs"
+      ]
+    }
+  }
+}
