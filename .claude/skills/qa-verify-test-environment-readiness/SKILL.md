@@ -1,16 +1,14 @@
 ---
 name: qa-verify-test-environment-readiness
-description: "Determine whether a target build and its dependencies are ready for trustworthy execution."
+description: "Establish whether this build and its dependencies support trustworthy checks. Use for verify environment readiness."
 ---
 
-# QA skill entry point — 13
+# Verify environment readiness
 
-Load and follow the complete authoritative procedure in [13-verify-test-environment-readiness.md](../../../13-verify-test-environment-readiness.md). This file is a discovery entry point, not a replacement summary.
+Read and apply [the authoritative procedure](../../../docs/procedures/13-verify-test-environment-readiness.md) and [the shared operating contract](../../../docs/operating-contract.md). Reuse current scope and authorization. Load relevant source revisions, distinguish confirmed rules, observations and proposals, and return the required artifact plus a checkpoint. Missing requirements remain Pending definition; execution without evidence remains Not Run. Apply the procedure directly rather than treating this entry point as its full content.
 
-1. Read [the shared operating contract](../../../90-OPERATING-CONTRACT.md) and the current user request/checkpoint. Reuse authorization already granted within scope.
-2. Read the numbered procedure linked above and apply its inputs, steps, outputs, blockers and evidence checks. Do not rely only on this entry point's description.
-3. Preserve confirmed rules, observations, proposals and pending questions. Missing tools are blockers; no execution result may be invented.
-4. For MCP setup/execution, consult [the connection guide](../../../PLAYWRIGHT_MCP_SETUP.md) and skill 34 before actual browser testing. Use real exposed tools and fresh page references.
-5. Save the required output and a proportionate handoff/checkpoint. Use the compact response profile for short requests.
+Expected inputs: Target/build, configuration, accounts, data and dependencies.
 
-Keep this entry point inside the complete project bundle: its relative references resolve to the workspace-root Markdown files. See [installation instructions](../../../SKILLS_INSTALLATION.md). Do not copy this entry point alone into a global skill directory.
+Required output: Track-specific readiness and blockers.
+
+Use [the skill catalog](../../../docs/skills.md) to select adjacent procedures. This project-local entry point requires the repository structure to remain together.

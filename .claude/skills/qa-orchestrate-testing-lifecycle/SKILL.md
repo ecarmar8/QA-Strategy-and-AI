@@ -1,16 +1,14 @@
 ---
 name: qa-orchestrate-testing-lifecycle
-description: "Coordinate product/team discovery, diagnose delivery and quality gaps, and guide prevention, verification, leadership, reporting and improvement across a QA engagement."
+description: "Start or resume an engagement and select the next valid activity. Use for orchestrate the qa lifecycle."
 ---
 
-# QA skill entry point — 00
+# Orchestrate the QA lifecycle
 
-Load and follow the complete authoritative procedure in [00-orchestrate-testing-lifecycle.md](../../../00-orchestrate-testing-lifecycle.md). This file is a discovery entry point, not a replacement summary.
+Read and apply [the authoritative procedure](../../../docs/procedures/00-orchestrate-testing-lifecycle.md) and [the shared operating contract](../../../docs/operating-contract.md). Reuse current scope and authorization. Load relevant source revisions, distinguish confirmed rules, observations and proposals, and return the required artifact plus a checkpoint. Missing requirements remain Pending definition; execution without evidence remains Not Run. Apply the procedure directly rather than treating this entry point as its full content.
 
-1. Read [the shared operating contract](../../../90-OPERATING-CONTRACT.md) and the current user request/checkpoint. Reuse authorization already granted within scope.
-2. Read the numbered procedure linked above and apply its inputs, steps, outputs, blockers and evidence checks. Do not rely only on this entry point's description.
-3. Preserve confirmed rules, observations, proposals and pending questions. Missing tools are blockers; no execution result may be invented.
-4. For MCP setup/execution, consult [the connection guide](../../../PLAYWRIGHT_MCP_SETUP.md) and skill 34 before actual browser testing. Use real exposed tools and fresh page references.
-5. Save the required output and a proportionate handoff/checkpoint. Use the compact response profile for short requests.
+Expected inputs: Objective, current sources, scope, checkpoint.
 
-Keep this entry point inside the complete project bundle: its relative references resolve to the workspace-root Markdown files. See [installation instructions](../../../SKILLS_INSTALLATION.md). Do not copy this entry point alone into a global skill directory.
+Required output: Stage plan, decisions, evidence checkpoint.
+
+Use [the skill catalog](../../../docs/skills.md) to select adjacent procedures. This project-local entry point requires the repository structure to remain together.

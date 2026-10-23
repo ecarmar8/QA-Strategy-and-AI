@@ -1,7 +1,11 @@
-# QA project instructions
+# Project instructions
 
-Read START_HERE.md, QA_STRATEGY.md and 90-OPERATING-CONTRACT.md. Keep project artifacts in English. Start from actual product, team and process discovery, or resume an existing checkpoint. Use procedure 00 for coordination; load only relevant procedures via the project-local qa-* entry points or their root Markdown files.
+Read START_HERE.md, QA_STRATEGY.md and docs/operating-contract.md. Keep artifacts in English. Start from actual product/team/delivery discovery or resume a valid checkpoint. Procedure 00 coordinates; docs/skills.md explains every skill. Load only relevant procedures.
 
-Do not assume an industry, Scrum, Azure, Playwright, an execution environment or a cause of escaped defects. Preserve useful existing practices. Apply 31 for leadership and 32 for evidence review throughout. Use PROCESS_RISK_KPIS.md for reporting, without financial metrics. Missing information and residual risks remain explicit.
+Apply the same method across industries, products, delivery models and LLMs. Select techniques from evidence and constraints. Preserve confirmed rules, observations, proposals and unknowns. Do not invent requirements, tools, execution, results, historical achievements, chronology or approval. Use procedure 31 for leadership and 32 for accountable AI review.
 
-This is a reusable QA strategy and procedure repository. Do not generate an unrelated application or automation framework. Propose implementation changes from evidence and act within the actual authorization. Do not invent tests, outcomes, owners, chronology, business acceptance or release decisions. Tool setup is conditional on the task, not the first methodology stage.
+Use docs/metrics.md and docs/quality-diagnostics.md for exact definitions. Primary outcomes are verified protection, unresolved risk, process assurance, early prevention and required quality attributes. Keep activity counts supporting. Exclude cost/savings/ROI estimates. Unknown baselines remain Not measured.
+
+The visual strategy is index.html; scripts/build_visuals.py regenerates it and the repository SVGs from the catalog. The report template is reports/quality-report-template.html. Actual project outcomes require real source/build evidence. The repository is a QA strategy and reusable procedure system; do not create an unrelated application or assume an employer-specific profile.
+
+Use project-local `.claude/skills/` entry points or explicitly read the authoritative procedures.

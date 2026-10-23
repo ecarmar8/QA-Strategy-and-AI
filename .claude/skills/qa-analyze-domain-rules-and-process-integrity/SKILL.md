@@ -1,6 +1,14 @@
 ---
 name: qa-analyze-domain-rules-and-process-integrity
-description: Analyze business rules, state constraints and process integrity for the actual product domain without assuming industry-specific requirements.
+description: "Extract what must remain true in this product, without importing another sector’s rules. Use for analyze domain rules and integrity."
 ---
 
-Read and follow [06-analyze-domain-rules-and-process-integrity.md](../../../06-analyze-domain-rules-and-process-integrity.md) and [90-OPERATING-CONTRACT.md](../../../90-OPERATING-CONTRACT.md). Preserve confirmed rules, observations, proposals and pending questions. Return source-linked rule/control coverage and a checkpoint; do not invent execution or business decisions.
+# Analyze domain rules and integrity
+
+Read and apply [the authoritative procedure](../../../docs/procedures/06-analyze-domain-rules-and-process-integrity.md) and [the shared operating contract](../../../docs/operating-contract.md). Reuse current scope and authorization. Load relevant source revisions, distinguish confirmed rules, observations and proposals, and return the required artifact plus a checkpoint. Missing requirements remain Pending definition; execution without evidence remains Not Run. Apply the procedure directly rather than treating this entry point as its full content.
+
+Expected inputs: Confirmed business rules and entity relationships.
+
+Required output: Rule/invariant register and independent oracles.
+
+Use [the skill catalog](../../../docs/skills.md) to select adjacent procedures. This project-local entry point requires the repository structure to remain together.

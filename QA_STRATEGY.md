@@ -98,7 +98,7 @@ Maintain separate confirmed findings and hypotheses. Review conclusions with the
 
 ## 3. Agree a contextual quality strategy
 
-Create a short project-specific strategy using [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md). Specify objectives, included/excluded workflows, quality expectations, risks, levels of verification, responsibilities, data/environments, cadence, evidence, release conditions and escalation paths. Obtain the relevant owners' review; retain disagreements and unresolved decisions.
+Create a short project-specific strategy using [docs/project-templates.md](docs/project-templates.md). Specify objectives, included/excluded workflows, quality expectations, risks, levels of verification, responsibilities, data/environments, cadence, evidence, release conditions and escalation paths. Obtain the relevant owners' review; retain disagreements and unresolved decisions.
 
 Model each risk as **a failure scenario in a specific process, its consequence and its contributing conditions**. Give it a stable ID, source, priority rationale, owner, required controls and residual concern. Use the organization's existing risk taxonomy where available. If priority is provisional, label it. Do not fabricate probabilities or convert an ordinal score into a claim of measured risk reduction.
 
@@ -229,15 +229,15 @@ Evaluate AI assistance by correction effort, source fidelity and usefulness of r
 
 ## 10. Measure outcomes and improve
 
-Use [PROCESS_RISK_KPIS.md](PROCESS_RISK_KPIS.md) for exact definitions. These are operational definitions for this strategy, to be agreed locally, not universal benchmarks. Always report scope, build, period, baseline changes, counts/denominators and missing information.
+Use [docs/metrics.md](docs/metrics.md) for exact definitions. These are operational definitions for this strategy, to be agreed locally, not universal benchmarks. Always report scope, build, period, baseline changes, counts/denominators and missing information.
 
-The executive page leads with verified risk mitigation, unresolved critical risks, critical process assurance, shift-left readiness, preventive findings resolved and non-functional assurance. Keep test counts, pass rates and automation activity in supporting detail. Exclude financial indicators: this strategy requires no cost, savings, ROI or monetary exposure estimates.
+The quality page leads with verified risk mitigation, unresolved critical risks, critical process assurance, shift-left readiness, preventive findings resolved and non-functional assurance. Keep test counts, pass rates and automation activity in supporting detail. Exclude financial indicators: this strategy requires no cost, savings, ROI or monetary exposure estimates.
 
 Track production feedback and delivery constraints only when relevant records exist. Segment by product, criticality and comparable periods. Rising discovered risks may reflect improved discovery rather than worsening quality. A smaller unresolved count is not improvement if important risks were simply removed from the denominator. Retain baseline revisions and exclusion reasons.
 
 For each proposed improvement define the gap, intervention, owner, observation window, success evidence and possible confounders. Pilot it in a small real scope, review whether the protection works and then decide to retain, modify or stop it. Check recurrence over a meaningful period before claiming sustained improvement.
 
-**Improvement output:** one-page executive report, evidence-linked risks/actions and a reviewed improvement backlog. The report states what can be concluded and what cannot yet be measured.
+**Improvement output:** one-page quality report, evidence-linked risks/actions and a reviewed improvement backlog. The report states what can be concluded and what cannot yet be measured.
 
 ## 11. Adapt the approach to different delivery contexts
 

@@ -1,53 +1,82 @@
-# QA Strategy and AI
+# Quality Engineering · Strategy & AI
 
-**Edward Carvajal Martinez · Senior QA Engineer / QA Lead**
+### Edward Carvajal Martinez
 
-A reusable QA operating strategy for understanding products and teams, diagnosing quality gaps, preventing avoidable defects, verifying critical processes and guiding evidence-based decisions. Apply it across business sectors, delivery models and technology stacks. AI supports the engineer's analysis and execution workflow; professional judgment and evidence remain accountable.
+**Understand deeply. Prevent early. Verify what matters.**
 
-## Operating method
+![Quality engineering strategy](assets/strategy-overview.svg)
 
-Understand the product and actual delivery process → diagnose evidence-backed gaps → agree risks and controls → clarify early → design and verify relevant coverage → assess readiness → observe outcomes and improve. Leadership, mentoring, communication and source review run throughout.
+My QA approach brings together 25+ years of software quality work across complex business processes, integrations and data. I combine product understanding, risk-based prevention, hands-on verification, leadership and AI-assisted work into one adaptable operating method.
 
-This repository contains the strategy, engagement plan, working templates, 35 reusable procedures, project-local skill entry points and an English process-risk HTML report template. It contains no claimed client test results or release approvals. Applying the strategy creates real project artifacts from the engagement's sources.
+**[Explore the visual strategy](index.html)** · **[Read the strategy](QA_STRATEGY.md)** · **[See all 35 skills](docs/skills.md)** · **[Use with your LLM](docs/llm-clients.md)**
 
-## Main documents
+Open `index.html` locally for the interactive view. GitHub's file viewer displays its source; the visual below and the Markdown diagrams render directly in the repository. The interactive view also works with ordinary static hosting when configured separately.
 
-| Document | Purpose |
-|---|---|
-| [START_HERE.md](START_HERE.md) | Begin a real engagement or resume current work |
-| [QA_STRATEGY.md](QA_STRATEGY.md) | Complete cross-sector strategy and adaptation decisions |
-| [ENGAGEMENT_PLAN.md](ENGAGEMENT_PLAN.md) | Discovery, diagnosis, pilot and ongoing review checkpoints |
-| [PROJECT_TEMPLATES.md](PROJECT_TEMPLATES.md) | Project strategy, diagnostic, risk/control, prevention, verification, mentoring and release records |
-| [MASTER_PROMPT.md](MASTER_PROMPT.md) | Reusable instruction for the AI-assisted engagement |
-| [PROCESS_RISK_KPIS.md](PROCESS_RISK_KPIS.md) | Six executive KPIs with exact formulas and evidence rules |
-| [HTML_REPORT_GUIDE.md](HTML_REPORT_GUIDE.md) | Generate an English executive report from actual evidence |
-| [Executive briefing](99-CTO-FIVE-MINUTE-WALKTHROUGH.md) | Discuss the strategy and real evidence with leadership |
+## The operating cycle
 
-## Procedure map
+![From understanding to continuous improvement](assets/method-map.svg)
 
-| Stage | Procedures | Outputs |
+| Understand & diagnose | Prevent & verify | Decide & improve |
 |---|---|---|
-| Discovery and diagnosis | 00, 02–06, 30–32 | Context, stakeholders, process/delivery map, escape analysis, baseline |
-| Strategy and prevention | 04, 07–09 | Questions/decisions, risk-control model, strategy and pilot |
-| Coverage and readiness | 10–13 | Cases/charters, traceability, controlled data, environment evidence |
-| Verification | 14, 17–21, 24 | Actual functional/non-functional results, evidence and gaps |
-| Sustainable automation | 15–16, 25 | Justified candidates, maintained checks, contextual pipeline feedback |
-| Defects and release | 22–24, 28–29 | Triage, fix verification, regression, recommendation, post-release observations |
-| Leadership and improvement | 26–27, 30–32 | Process-risk report, mentoring, reviewed improvements and checkpoints |
-| Optional integrations | 01, 33–34 | Actual authorized Azure access/write or Playwright MCP connection, only if needed |
+| Learn the product, people and actual delivery flow. Trace how failures are introduced and escape. | Clarify rules early. Design coverage around risk. Validate UI, APIs, integrations, data and agreed quality attributes. | Present current protection and residual risk. Give a supported release recommendation. Learn from production and develop team capability. |
 
-The full numbered index is in [PROCEDURE_INDEX.md](PROCEDURE_INDEX.md). Numbering is navigation, not a requirement to run every procedure. Procedure 06 analyzes the actual domain's rules and process integrity; no industry is assumed.
+## Value from the first day
 
-## Executive evidence
+**A clear picture and a concrete next action.** Follow one real workflow, examine one current change and available escape evidence, review coverage with the team and produce a source-linked map of facts, questions, risks and priorities. AI accelerates the analysis; accountable review establishes what is true.
 
-Report verified risk mitigation, unresolved critical risks, critical process assurance, shift-left readiness, preventive findings resolved and non-functional assurance. Keep execution counts and pass rates as diagnostic detail. Missing evidence stays visible; no costs, savings, ROI or monetary exposure estimates are required.
+| Need | My approach | Inspectable output |
+|---|---|---|
+| Defects reach production | Reconstruct introduction causes, detection gaps and release decisions | Escape analysis and focused control improvement |
+| Requirements are unclear | Challenge rules, exceptions, states and dependencies before implementation | Confirmed decisions and risk-based coverage |
+| Data or integrations are unreliable | Trace source → transformation → persistence → consuming behavior | Contract/failure-mode evidence and SQL reconciliation |
+| Testing arrives late | Inspect queues, testability, data readiness and delivery batch size | Visible blockers and an earlier feedback intervention |
+| Automation is brittle | Select stable protections at the lowest effective layer and verify enforcement | Maintained assertions, actual runs and clear ownership |
+| The team needs direction | Set standards, prioritize capacity, pair on real work and grow independence | Shared agreements, reviewed work and mentoring outcomes |
 
-## Using the project
+## Experience behind the method
 
-Read the strategy and apply the master prompt with real authorized sources. Generic LLMs can read the root procedures; compatible clients can discover `.claude/skills/qa-*/SKILL.md` entry points. Keep the complete repository together because those entry points link to root procedures. See [SKILLS_INSTALLATION.md](SKILLS_INSTALLATION.md) for client-specific support. No connector, browser server or automation framework is needed to begin product and process analysis.
+Aviation journeys, banking and payments, legacy/data modernization, enterprise operations and QA leadership inform the same recurring decisions: understand the process, expose the important failure, verify the protection and make the next action clear. [Experience translated into practice](docs/experience.md).
 
-Keep business expectations, observed behavior, proposals and unknowns distinct. Never infer execution from generated text. Protect credentials and confidential evidence. QA recommendations do not replace business acceptance or authorized release decisions. Sources and adaptation boundaries are in [98-SOURCES.md](98-SOURCES.md).
+## How AI fits
 
-## Role-specific application
+**Sources → selected skill → AI proposal → accountable review → actual verification → quality decision.**
 
-[CapRelease profile](profiles/caprelease/QA_ENGAGEMENT_STRATEGY.md): vacancy traceability, day-one deliverables, data/integration assurance, AI evidence and exact diagnostic KPIs. The core method remains cross-sector; company-specific rules and outcomes require actual evidence.
+The same method can be read by any LLM. Claude Code, Gemini CLI and Copilot have client-specific discovery support; other clients can receive the relevant Markdown procedures directly. Tool access belongs to the host, not to the model or a skill file.
+
+## Measure the quality that matters
+
+![Quality measurement framework](assets/measurement-map.svg)
+
+Lead with verified risk mitigation, unresolved critical risks, critical process assurance, shift-left readiness, preventive findings resolved and non-functional assurance. Use source/data/contract, automation, escape and feedback measures to investigate the underlying problem. Show counts, denominators, source/build and missing evidence. Operational case counts support the conclusions.
+
+## Repository map
+
+| Location | Purpose |
+|---|---|
+| [index.html](index.html) | Interactive strategy, methods, skill explorer, problem navigator, metrics and LLM usage |
+| [QA_STRATEGY.md](QA_STRATEGY.md) | Complete adaptable QA strategy |
+| [START_HERE.md](START_HERE.md) | Begin or resume an actual engagement |
+| [docs/skills.md](docs/skills.md) | What every skill does, its inputs, outputs and appropriate use |
+| [docs/methods.md](docs/methods.md) | Techniques and the reasoning for choosing them |
+| [docs/problem-solving.md](docs/problem-solving.md) | Evidence-led responses to common delivery and quality problems |
+| [docs/metrics.md](docs/metrics.md) | Primary KPI definitions and verification rules |
+| [docs/quality-diagnostics.md](docs/quality-diagnostics.md) | Supporting quality, integration, data and AI measures |
+| [docs/llm-clients.md](docs/llm-clients.md) | Claude Code, Gemini CLI, Copilot and other LLMs |
+| [docs/procedures/](docs/procedures/) | 35 authoritative procedures |
+| [docs/project-templates.md](docs/project-templates.md) | Working records for discovery through release and improvement |
+| [reports/quality-report-template.html](reports/quality-report-template.html) | Evidence-driven project report template |
+| [scripts/](scripts/) · [tests/](tests/) | Deterministic metric calculations and checks |
+
+The visual strategy describes how I work. Project outcome charts are populated only from an actual reviewed evidence ledger. Business rules, acceptance targets and release authority come from each engagement.
+
+## Reproduce the portfolio checks
+
+```bash
+python scripts/build_visuals.py
+python scripts/validate_repository.py
+python -m unittest discover -s tests -v
+node tests/test_primary_metrics.cjs
+python scripts/calculate_metrics.py
+```
+
+Python's standard library and Node.js run these checks; the visual strategy opens without a server or package installation. The checks validate this repository's structure and measurement tooling, not an external product. See [the evidence data contract](docs/data-contract.md) before populating a project report.

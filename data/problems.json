@@ -1,0 +1,169 @@
+[
+  {
+    "id": "escapes",
+    "title": "Defects escape to production",
+    "signal": "Recurring user reports or late discoveries",
+    "investigate": "Trace a bounded sample: expected behavior, introduction mechanism, detection opportunity, tested build and release decision.",
+    "action": "Agree one specific protection around a confirmed escape mechanism; verify it with the current tester and developers.",
+    "proof": "Implemented control, current verification and later recurrence review across comparable release cohorts.",
+    "skills": [
+      "00",
+      "04",
+      "07",
+      "11",
+      "22",
+      "24",
+      "30",
+      "31"
+    ],
+    "metrics": [
+      "K01",
+      "K02",
+      "K05",
+      "K12"
+    ]
+  },
+  {
+    "id": "ambiguity",
+    "title": "Requirements change or remain ambiguous",
+    "signal": "Different interpretations, rework or late acceptance disputes",
+    "investigate": "Compare source revisions, rules, exceptions, decisions and the timing of changes.",
+    "action": "Resolve the essential uncertainty before affected implementation and review representative examples with the decision owner.",
+    "proof": "Confirmed rule/change, real chronology and cases with independent expected results.",
+    "skills": [
+      "03",
+      "04",
+      "05",
+      "06",
+      "10",
+      "11"
+    ],
+    "metrics": [
+      "K04",
+      "K05"
+    ]
+  },
+  {
+    "id": "late",
+    "title": "Useful feedback arrives too late",
+    "signal": "Large queues, last-minute testing or repeated waiting",
+    "investigate": "Observe real work arrival, WIP, build/data readiness, blocked periods and available validation time.",
+    "action": "Pilot a smaller verifiable slice, earlier collaboration or a specific readiness correction according to the observed bottleneck.",
+    "proof": "Actual timestamps, explicit waiting work and control evidence from the changed delivery slice.",
+    "skills": [
+      "00",
+      "09",
+      "13",
+      "14",
+      "25",
+      "31"
+    ],
+    "metrics": [
+      "K04",
+      "K13"
+    ]
+  },
+  {
+    "id": "integration",
+    "title": "Integrations fail unpredictably",
+    "signal": "Retries, partial results, duplicates or provider-specific failures",
+    "investigate": "Inspect contracts, identity, pagination, limits, mappings, ordering and actual persisted effects.",
+    "action": "Define provider-specific required failure/recovery protections and verify them in an authorized controlled environment.",
+    "proof": "Contract/revision, request/response, recovery result and consistent downstream state.",
+    "skills": [
+      "03",
+      "06",
+      "12",
+      "17",
+      "18",
+      "21"
+    ],
+    "metrics": [
+      "K07",
+      "K08",
+      "K10"
+    ]
+  },
+  {
+    "id": "data",
+    "title": "Data cannot be trusted",
+    "signal": "Conflicting reports, wrong derived values or migration discrepancies",
+    "investigate": "Confirm grain, schema, mappings, precision, time, null semantics and independent expected values.",
+    "action": "Trace a representative source change through transformation/persistence to the actual consumer; reconcile aggregate and row-level results.",
+    "proof": "Reviewed query, snapshot, expected/actual differences and source-to-outcome lineage.",
+    "skills": [
+      "05",
+      "06",
+      "12",
+      "17",
+      "18"
+    ],
+    "metrics": [
+      "K08",
+      "K09"
+    ]
+  },
+  {
+    "id": "automation",
+    "title": "Automation gives noisy or false confidence",
+    "signal": "Flaky results, skipped checks, brittle suites or green builds with missing evidence",
+    "investigate": "Inspect assertion value, isolation, fixtures, retries, quarantine, runner exits and actual gate enforcement.",
+    "action": "Stabilize a small set of important protections at the lowest effective layer and prove required failures block progression.",
+    "proof": "Reviewed assertions, first-attempt/retry records, safe negative gate test and named maintenance owner.",
+    "skills": [
+      "11",
+      "13",
+      "15",
+      "16",
+      "20",
+      "25"
+    ],
+    "metrics": [
+      "K01",
+      "K11"
+    ]
+  },
+  {
+    "id": "people",
+    "title": "QA capability needs to grow",
+    "signal": "Unclear standards, overloaded ownership or dependence on one experienced person",
+    "investigate": "Review current work samples, reasoning, capacity, knowledge concentration and decision ownership.",
+    "action": "Agree proportionate standards; pair on one important scenario, then have the tester lead and explain subsequent evidence.",
+    "proof": "Revised work samples, explicit responsibilities and observable independent judgment.",
+    "skills": [
+      "09",
+      "10",
+      "11",
+      "22",
+      "31",
+      "32"
+    ],
+    "metrics": [
+      "K03",
+      "K13"
+    ]
+  },
+  {
+    "id": "release",
+    "title": "Release decisions lack a clear basis",
+    "signal": "Conflicting opinions, activity counts or unrecorded acceptance of risk",
+    "investigate": "Reconcile actual build/scope, agreed gates, stale results, required acceptance and operational prerequisites.",
+    "action": "Make essential failed/missing protection explicit; present a supported recommendation, next action and actual decision owner.",
+    "proof": "Gate-level evidence, residual risks and a human decision record separate from QA recommendation.",
+    "skills": [
+      "07",
+      "11",
+      "21",
+      "26",
+      "27",
+      "28",
+      "29"
+    ],
+    "metrics": [
+      "K01",
+      "K02",
+      "K03",
+      "K06"
+    ]
+  }
+]

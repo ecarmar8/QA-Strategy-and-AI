@@ -1,0 +1,107 @@
+[
+  {
+    "id": "K01",
+    "title": "Verified risk mitigation",
+    "group": "Protection",
+    "formula": "Risks with every required control implemented and currently verified \u00f7 identified applicable risks \u00d7 100",
+    "evidence": "Confirmed risk/control baseline and current verification. This is coverage of identified risks, not a reduction in incident probability."
+  },
+  {
+    "id": "K02",
+    "title": "Unresolved critical risks",
+    "group": "Protection",
+    "formula": "Count of critical risks with failed/unverified required protection, or no defined required control",
+    "evidence": "Show consequence, owner and next action. Accepted/deferred risks remain residual."
+  },
+  {
+    "id": "K03",
+    "title": "Critical process assurance",
+    "group": "Protection",
+    "formula": "Critical processes with their complete required control baseline verified \u00f7 in-scope critical processes \u00d7 100",
+    "evidence": "A whole critical process requires all relevant protections; one happy path is insufficient."
+  },
+  {
+    "id": "K04",
+    "title": "Shift-left readiness",
+    "group": "Prevention",
+    "formula": "Critical stories ready through risk/dependency review and essential decisions before development \u00f7 critical stories started in the cohort \u00d7 100",
+    "evidence": "Source-backed start, review and decision chronology; missing timing is Not measured."
+  },
+  {
+    "id": "K05",
+    "title": "Preventive findings resolved",
+    "group": "Prevention",
+    "formula": "Confirmed early findings resolved before affected implementation \u00f7 confirmed early findings requiring early resolution \u00d7 100",
+    "evidence": "Decision/change evidence and timing required. Late and unresolved findings stay in the denominator."
+  },
+  {
+    "id": "K06",
+    "title": "Non-functional assurance",
+    "group": "Protection",
+    "formula": "Agreed applicable quality requirements met with current evidence \u00f7 agreed applicable quality requirements \u00d7 100",
+    "evidence": "Targets, workload/method and actual measurements; absent assessment is not a pass."
+  },
+  {
+    "id": "K07",
+    "title": "Integration failure-mode assurance",
+    "group": "Diagnostics",
+    "formula": "Verified required failure-mode protections \u00f7 applicable required failure-mode protections \u00d7 100",
+    "evidence": "Provider/operation-specific failures, limits, retries, recovery and actual downstream effects."
+  },
+  {
+    "id": "K08",
+    "title": "Source-to-outcome traceability",
+    "group": "Diagnostics",
+    "formula": "Outcomes with all policy-required current source links and rule/version evidence \u00f7 outcomes in the confirmed cohort \u00d7 100",
+    "evidence": "Required sources and freshness follow the actual process policy. Lineage is distinct from business-policy correctness."
+  },
+  {
+    "id": "K09",
+    "title": "Critical data-rule assurance",
+    "group": "Diagnostics",
+    "formula": "Verified critical data rules \u00f7 agreed applicable critical data rules \u00d7 100",
+    "evidence": "Actual schema/snapshot and independent oracles; aggregate plus row-level checks where appropriate."
+  },
+  {
+    "id": "K10",
+    "title": "Critical contract assurance",
+    "group": "Diagnostics",
+    "formula": "Verified required critical contract obligations \u00f7 applicable required critical contract obligations \u00d7 100",
+    "evidence": "Versioned expectations at the actual consumer/provider boundary, including agreed error behavior."
+  },
+  {
+    "id": "K11",
+    "title": "Enforced automation of critical controls",
+    "group": "Diagnostics",
+    "formula": "Critical controls with all required assertions automated, current passing runs and gate proof \u00f7 critical controls \u00d7 100",
+    "evidence": "Manual/unautomated controls stay in the population; files or a green badge alone are not enforcement."
+  },
+  {
+    "id": "K12",
+    "title": "Critical escape incidence",
+    "group": "Outcomes",
+    "formula": "Mature deployed releases with a confirmed critical escape \u00f7 deployed releases with the observation window complete \u00d7 100",
+    "evidence": "Known severity and introduced-release attribution; show immature cohort members separately."
+  },
+  {
+    "id": "K13",
+    "title": "Actionable QA feedback lead time",
+    "group": "Outcomes",
+    "formula": "p50 / p90 elapsed hours from agreed test readiness to first actionable feedback",
+    "evidence": "Show completed sample and waiting items separately; use a defined calendar and actual timestamps."
+  },
+  {
+    "id": "K14",
+    "title": "AI first-review acceptance",
+    "group": "AI quality",
+    "formula": "AI-assisted artifacts accepted at first completed review without material correction \u00f7 completed first reviews \u00d7 100",
+    "evidence": "Accountable review and agreed correction criteria; show unreviewed drafts separately."
+  },
+  {
+    "id": "K15",
+    "title": "Observed AI effort change",
+    "group": "AI quality",
+    "formula": "(Comparable baseline active minutes \u2212 assisted active minutes including review/rework) \u00f7 baseline active minutes \u00d7 100",
+    "evidence": "Matched accepted work, recorded active effort and comparable scope. Negative values are valid; this is not financial savings."
+  }
+]

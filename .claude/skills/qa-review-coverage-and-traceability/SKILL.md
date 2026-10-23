@@ -1,16 +1,14 @@
 ---
 name: qa-review-coverage-and-traceability
-description: "Check whether stories, risks, cases, results and defects form an auditable evidence chain."
+description: "Check the complete link from requirements and risks to evidence. Use for review traceability and gaps."
 ---
 
-# QA skill entry point — 11
+# Review traceability and gaps
 
-Load and follow the complete authoritative procedure in [11-review-coverage-and-traceability.md](../../../11-review-coverage-and-traceability.md). This file is a discovery entry point, not a replacement summary.
+Read and apply [the authoritative procedure](../../../docs/procedures/11-review-coverage-and-traceability.md) and [the shared operating contract](../../../docs/operating-contract.md). Reuse current scope and authorization. Load relevant source revisions, distinguish confirmed rules, observations and proposals, and return the required artifact plus a checkpoint. Missing requirements remain Pending definition; execution without evidence remains Not Run. Apply the procedure directly rather than treating this entry point as its full content.
 
-1. Read [the shared operating contract](../../../90-OPERATING-CONTRACT.md) and the current user request/checkpoint. Reuse authorization already granted within scope.
-2. Read the numbered procedure linked above and apply its inputs, steps, outputs, blockers and evidence checks. Do not rely only on this entry point's description.
-3. Preserve confirmed rules, observations, proposals and pending questions. Missing tools are blockers; no execution result may be invented.
-4. For MCP setup/execution, consult [the connection guide](../../../PLAYWRIGHT_MCP_SETUP.md) and skill 34 before actual browser testing. Use real exposed tools and fresh page references.
-5. Save the required output and a proportionate handoff/checkpoint. Use the compact response profile for short requests.
+Expected inputs: Source baseline, controls, cases and available results.
 
-Keep this entry point inside the complete project bundle: its relative references resolve to the workspace-root Markdown files. See [installation instructions](../../../SKILLS_INSTALLATION.md). Do not copy this entry point alone into a global skill directory.
+Required output: Coverage matrix and explicit assurance gaps.
+
+Use [the skill catalog](../../../docs/skills.md) to select adjacent procedures. This project-local entry point requires the repository structure to remain together.
